@@ -90,6 +90,12 @@ class ManifestTests(unittest.TestCase):
         self.assertIn("web/src/app.tsx", text)
         self.assertIn("1200", text)
 
+    def test_the_manifest_points_at_one_file_diffs_when_it_knows_the_base(self):
+        big = "\n".join(f"+ line {i}" for i in range(40)) + "\n"
+        text = render(diff=big, numstat="40\t0\ta.ts\n", inline_lines=10)
+        self.assertIn("git -C /workspace/sandbox diff --stat " + "b" * 40, text)
+        self.assertIn("diff " + "b" * 40 + " -- <path>", text)
+
     def test_the_manifest_does_not_leak_the_diff_body(self):
         big = "\n".join(f"+ secret-line-{i}" for i in range(40)) + "\n"
         text = render(diff=big, numstat="40\t0\ta.ts\n", inline_lines=10)

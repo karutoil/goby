@@ -44,7 +44,7 @@ def _rows(numstat: str) -> list[tuple[int, int, str]]:
     return rows
 
 
-def _manifest(diff_lines: int, numstat: str, *, diff_path: str, sandbox: str) -> str:
+def _manifest(diff_lines: int, numstat: str, *, diff_path: str, sandbox: str, base: str = "") -> str:
     rows = _rows(numstat)
     total = len(rows)
     largest = sorted(rows, key=lambda row: (-(row[0] + row[1]), row[2]))[:MANIFEST_ROWS]
@@ -66,17 +66,23 @@ def _manifest(diff_lines: int, numstat: str, *, diff_path: str, sandbox: str) ->
     ]
     if rest > 0:
         lines += ["", f"{rest} more file(s): `grep -n '^diff --git' {diff_path}`"]
+    if base:
+        lines += [
+            "",
+            f"The base commit is in the sandbox too: `git -C {sandbox} diff --stat {base}` is the",
+            f"shape of the change and `git -C {sandbox} diff {base} -- <path>` is one file. Reading",
+            "the whole patch in chunks is the slow way to do this.",
+        ]
     lines += [
         "",
-        "Read it with `grep -n '^diff --git'`, `sed -n '1,200p'`, or by opening the file in the",
-        "sandbox. Do not guess at a change you have not read: a finding you cannot reproduce",
-        "is withheld, and the diff being large is not an excuse for a comment you cannot prove.",
+        "Do not guess at a change you have not read: a finding you cannot reproduce is withheld,",
+        "and the diff being large is not an excuse for a comment you cannot prove.",
     ]
     return "\n".join(lines)
 
 
 def diff_block(diff: str, numstat: str, *, inline_lines: int, diff_path: str = "{{OUT}}/diff.patch",
-               sandbox: str = "{{SANDBOX}}") -> str:
+               sandbox: str = "{{SANDBOX}}", base: str = "") -> str:
     """The `{{DIFF}}` value: a fenced diff, or a manifest that says where the diff is."""
     if inline_lines < 0:
         raise ValueError("inline_lines must be non-negative")
@@ -84,7 +90,7 @@ def diff_block(diff: str, numstat: str, *, inline_lines: int, diff_path: str = "
     if lines <= inline_lines:
         body = diff.rstrip("\n")
         return f"```diff\n{body}\n```" if body else "```diff\n```"
-    return _manifest(lines, numstat, diff_path=diff_path, sandbox=sandbox)
+    return _manifest(lines, numstat, diff_path=diff_path, sandbox=sandbox, base=base)
 
 
 def render(template: str, values: Mapping[str, str], diff: str, numstat: str, *,
@@ -103,6 +109,7 @@ def render(template: str, values: Mapping[str, str], diff: str, numstat: str, *,
         inline_lines=inline_lines,
         diff_path=f"{values.get('OUT', '{{OUT}}')}/diff.patch",
         sandbox=values.get("SANDBOX", "{{SANDBOX}}"),
+        base=values.get("BASE", ""),
     )
     rendered = rendered.replace("{{DIFF}}", block)
     return rendered
