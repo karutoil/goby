@@ -1,7 +1,8 @@
 import {BOT_LOGINS, STATUS_CONTEXT, SUMMARY_PREFIX} from '../identity.ts';
 import type {GitHubClient} from '../platforms/github.ts';
 import {post_gate_status} from '../platforms/publish.ts';
-import {diffDigest, evaluateGate, parseReceipt, type GateResult, type ReviewReceipt} from './verdict.ts';
+import type {VerifyMode} from './verify.ts';
+import {diffDigest, evaluateGate, parseReceipt, type GatePolicy, type GateResult, type ReviewReceipt} from './verdict.ts';
 
 export class HeadChanged extends Error {}
 
@@ -47,7 +48,7 @@ export async function loadReceipt(client: GitHubClient, pr: number, head: string
 export async function assertHead(client: GitHubClient, pr: number, expected: string): Promise<void> {
   if ((await client.fetch_pr_meta(pr)).head_sha !== expected) throw new HeadChanged('PR head changed; rerun for the current commit');
 }
-async function snapshot(client: GitHubClient, pr: number, head: string): Promise<{result: GateResult; fingerprint: string}> {
+async function snapshot(client: GitHubClient, pr: number, head: string, policy: GatePolicy): Promise<{result: GateResult; fingerprint: string}> {
   const before = await client.fetch_pr_meta(pr);
   if (before.head_sha !== head) throw new HeadChanged('PR head changed');
   const diff_sha256 = diffDigest(await client.fetch_diff(pr));
@@ -57,18 +58,19 @@ async function snapshot(client: GitHubClient, pr: number, head: string): Promise
   const after = await client.fetch_pr_meta(pr);
   if (after.head_sha !== head || after.base_ref !== before.base_ref) throw new HeadChanged('PR head or base changed during evidence acquisition');
   const evidence = {base_ref: before.base_ref, diff_sha256};
-  const result = evaluateGate(receipt, head, opened, resolved, complete, execution, evidence);
+  const result = evaluateGate(receipt, head, opened, resolved, complete, execution, evidence, policy);
   const threads = (items: typeof opened) => items.map(t => [t.thread_id, t.fid, t.sha]).sort((a, b) => JSON.stringify(a).localeCompare(JSON.stringify(b)));
   return {result, fingerprint: diffDigest(JSON.stringify({receipt, evidence, execution, complete, opened: threads(opened), resolved: threads(resolved)}))};
 }
-export async function refreshGate(client: GitHubClient, pr: number, options: {expected_head?: string; dry_run?: boolean} = {}): Promise<GateResult> {
+export async function refreshGate(client: GitHubClient, pr: number, options: {expected_head?: string; dry_run?: boolean; verify?: VerifyMode} = {}): Promise<GateResult> {
+  const policy: GatePolicy = {verify: options.verify ?? 'off'};
   const head = options.expected_head ?? (await client.fetch_pr_meta(pr)).head_sha;
   await assertHead(client, pr, head);
   if (!options.dry_run) await post_gate_status(client, head, 'pending', 'Checking review evidence');
   let result: GateResult;
   let fingerprint: string | undefined;
   try {
-    const evidence = await snapshot(client, pr, head);
+    const evidence = await snapshot(client, pr, head, policy);
     result = evidence.result; fingerprint = evidence.fingerprint;
   } catch (error) {
     result = {head_sha: head, state: 'error', description: `Cannot establish review eligibility: ${error instanceof Error ? error.message : String(error)}`};
@@ -82,7 +84,7 @@ export async function refreshGate(client: GitHubClient, pr: number, options: {ex
     // Merge-time protection and workflow concurrency still own the external
     // race between this final read and a future mutation.
     try {
-      const current = await snapshot(client, pr, head);
+      const current = await snapshot(client, pr, head, policy);
       if (current.fingerprint !== fingerprint || current.result.state !== 'success') {
         result = {head_sha: head, state: 'failure', description: 'Review evidence changed during gate publication; recheck required'};
       }

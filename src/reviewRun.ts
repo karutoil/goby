@@ -25,6 +25,7 @@ import { build_summary } from './core/summary.ts';
 import { assertHead, finish_failure_should_report, HeadChanged, loadReceipt, refreshGate } from './core/gate.ts';
 import { diffDigest, parseReceipt, receiptMarker, type ReviewReceipt } from './core/verdict.ts';
 import { recordMarker, type RunRecord } from './core/record.ts';
+import { parseVerification, partition as partitionVerified, stampVerification, type Verification, type VerifyMode } from './core/verify.ts';
 import { REVIEW_VERSION } from './identity.ts';
 import { GitHubClient } from './platforms/github.ts';
 import { post_gate_status, post_review, post_status, reply_in_thread, resolve_thread } from './platforms/publish.ts';
@@ -84,6 +85,15 @@ function intEnv(name: string, fallback?: number): number {
   }
   if (!/^[0-9]+$/.test(raw)) throw new Error(`${name} must be a non-negative integer`);
   return Number(raw);
+}
+/**
+ * `off` keeps the old behaviour; `advisory` posts what it did not reproduce and says so;
+ * `required` publishes only reproduced findings and lets the gate refuse the rest.
+ */
+function verifyMode(): VerifyMode {
+  const raw = (optionalEnv('GOBY_VERIFY') ?? 'off').toLowerCase();
+  if (raw === 'off' || raw === 'advisory' || raw === 'required') return raw;
+  throw new Error('GOBY_VERIFY must be off, advisory or required');
 }
 function lineCount(text: string): number {
   return text ? text.split(/\r?\n/).length - (text.endsWith('\n') ? 1 : 0) : 0;
@@ -192,6 +202,7 @@ async function finish(out: string, client: GitHubClient, warn: (m: string) => vo
                       state: { published: boolean }): Promise<number> {
   const job = JSON.parse(await readFile(join(out, 'job.json'), 'utf8')) as Job;
   const maxFindings = intEnv('GOBY_MAX_FINDINGS');
+  const mode = verifyMode();
 
   if (job.reuse) {
     // No diff: this run decided before cloning, and a reuse refreshes a status rather than posting
@@ -207,7 +218,7 @@ async function finish(out: string, client: GitHubClient, warn: (m: string) => vo
       console.log(JSON.stringify({ phase: 'reused', gate: 'off' }));
       return 0;
     }
-    const gate = await refreshGate(client, job.pr, { expected_head: job.head });
+    const gate = await refreshGate(client, job.pr, { expected_head: job.head, verify: mode });
     console.log(JSON.stringify({ phase: 'reused', gate: gate.state }));
     return gate.state === 'success' ? 0 : 2;
   }
@@ -233,14 +244,39 @@ async function finish(out: string, client: GitHubClient, warn: (m: string) => vo
   const parsed = contract.parse_findings(JSON.stringify(emitted), true);
   if (parsed === null) throw new Error('report_findings produced an off-contract payload; refusing to post');
 
-  const picked = select(parsed, {
+  // Verification decides what a claim is worth; `select` still decides where it goes.
+  let verification: Verification | null = null;
+  let verificationNote: string | null = null;
+  if (mode !== 'off') {
+    const raw = await readFile(join(out, 'verify', 'verdict.json'), 'utf8').catch(() => null);
+    verification = parseVerification(raw, job.head, job.diff_digest);
+    if (verification === null) {
+      verificationNote = 'the verification pass produced no usable verdict, so nothing was reproduced';
+      // An unanswered verifier is an incomplete review, exactly like a reviewer that never
+      // reported: "nothing was withheld" would be a guess, and it is the guess that publishes.
+      if (mode === 'required') incomplete.push(verificationNote);
+    } else if (verification.degraded.length) {
+      verificationNote = verification.degraded.join('; ');
+    }
+    stampVerification(parsed, verification);
+  }
+
+  const [reproduced, unreproduced] = partitionVerified(parsed);
+  const candidates = mode === 'required' ? reproduced : parsed;
+  const picked = select(candidates, {
     diff, open_threads: job.open_threads, resolved_history: job.resolved_history, max_findings: maxFindings,
   });
+  const withheld = mode === 'required' ? unreproduced : [];
+  const withheldHigh = withheld.filter(f => f.severity === 'high').length;
+  const unverifiedPosted = mode === 'advisory' ? unreproduced : [];
+  const verifiedInline = picked.inline.filter(f => f.verification === 'verified');
   const complete = incomplete.length === 0;
   const receipt: ReviewReceipt = {
-    schema: 2, head_sha: job.head, base_ref: job.base, diff_sha256: job.diff_digest,
+    schema: 3, head_sha: job.head, base_ref: job.base, diff_sha256: job.diff_digest,
     complete, agent: true, unthreaded: picked.overflow.length + picked.dropped.cap,
     finding_ids: picked.inline.map(f => f.fid),
+    verify: mode, verified_ids: verifiedInline.map(f => f.fid),
+    withheld: withheld.length, withheld_high: withheldHigh, unverified: unverifiedPosted.length,
   };
   // Every record carries the running count; the last one is the total.
   const toolCalls = records.reduce((n, record) => Math.max(n, Number(record.tool_calls ?? 0)), 0);
@@ -251,6 +287,8 @@ async function finish(out: string, client: GitHubClient, warn: (m: string) => vo
       image: job.image, imageDigest: job.image_digest,
       droppedPaths: picked.dropped.paths, droppedCap: picked.dropped.cap, droppedDupe: picked.dropped.dupe,
       droppedResolved: picked.dropped.resolved, droppedRetracted: picked.dropped.retracted,
+      verified: verifiedInline.length, unverifiedPosted: unverifiedPosted.length,
+      withheld: withheld.length, withheldHigh, verificationNote,
       incomplete: complete ? null : incomplete.join(' '),
       caveat: caveats.length ? caveats.join(' ') : null,
     }, REVIEW_VERSION) + '\n\n' + receiptMarker(receipt);
@@ -279,7 +317,7 @@ async function finish(out: string, client: GitHubClient, warn: (m: string) => vo
     }));
     return 0;
   }
-  const gate = await refreshGate(client, job.pr, { expected_head: job.head });
+  const gate = await refreshGate(client, job.pr, { expected_head: job.head, verify: mode });
   console.log(JSON.stringify({
     phase: 'finished', inline: picked.inline.length, overflow: picked.overflow.length, caveats,
     withheld: { already_open: picked.dropped.dupe, resolved: picked.dropped.resolved },
@@ -333,7 +371,7 @@ async function gate(client: GitHubClient): Promise<number> {
     console.log(JSON.stringify({ phase: 'gate', skipped: target }));
     return 0;
   }
-  const result = await refreshGate(client, target.pr, { expected_head: target.head });
+  const result = await refreshGate(client, target.pr, { expected_head: target.head, verify: verifyMode() });
   console.log(JSON.stringify({ phase: 'gate', pr: target.pr, head: target.head, state: result.state }));
   return result.state === 'success' ? 0 : result.state === 'error' ? 1 : 2;
 }

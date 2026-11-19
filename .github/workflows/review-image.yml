@@ -12,6 +12,8 @@ on:
     paths:
       - "base/**"
       - "review/**"
+      # The verification pass the entrypoint runs; it ships inside the review image.
+      - "verify/**"
       # The reviewer image copies the shared run summary and timing tool from here, so a change to
       # either has to republish it: without this line a merged change to `common/timing.py` built
       # nothing and `:latest` kept running the old bytes.

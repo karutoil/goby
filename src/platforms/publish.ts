@@ -7,6 +7,13 @@ const cut = (s: string, n: number): string => Array.from(s).slice(0, n).join('')
 export function comment_body(finding: Finding, head: string): string {
   const lines = [`**[${finding.severity}] ${finding.title}**`, ''];
   if (finding.detail) lines.push(finding.detail, '');
+  // The machine's evidence, kept separate from the reviewer's prose: `detail` is what the model
+  // says it did, and this is what the harness actually re-ran.
+  if (finding.verification === 'verified' && finding.probe) {
+    lines.push('**Reproduced by re-running, on the merge base and on this head:**', '', '```sh', finding.probe, '```', '');
+  } else if (finding.verification === 'unverified') {
+    lines.push('> Not reproduced: the harness did not observe this claim in this run.', '');
+  }
   let marker = `<!-- ${MARKER} id=${finding.fid} severity=${finding.severity} kind=bug sha=${head.slice(0, 10)}`;
   if (finding.end_line != null && finding.end_line > finding.line) {
     marker += ` start_line=${finding.line} end_line=${finding.end_line}`;

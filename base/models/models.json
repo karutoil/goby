@@ -39,6 +39,12 @@
       "apiKey": "$GOBY_MODEL_KEY",
       "models": [{ "id": "gpt-4.1" }]
     },
+    "custom": {
+      "baseUrl": "http://127.0.0.1:8787/v1",
+      "api": "openai-completions",
+      "apiKey": "$GOBY_MODEL_KEY",
+      "models": []
+    },
     "deepinfra": {
       "baseUrl": "http://127.0.0.1:8787/v1/openai",
       "api": "openai-completions",

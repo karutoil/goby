@@ -228,6 +228,12 @@ export default function (pi: ExtensionAPI) {
 			severity: Type.Union([Type.Literal('high'), Type.Literal('medium'), Type.Literal('low')]),
 			title: Type.String({ description: 'One line: what is wrong.' }),
 			detail: Type.String({ description: 'Why it is wrong, and what you ran to check it.' }),
+			probe: Type.Optional(Type.String({
+				description:
+					'The exact shell command you ran, from the repository root, that fails because of this bug. ' +
+					'It must exit non-zero when the bug is present and zero when it is not. The harness re-runs it ' +
+					'against the merge base and against your head; a finding without one is withheld.',
+			})),
 		}), { description: 'Findings to report. Empty when you found nothing.' }),
 	});
 
@@ -236,7 +242,8 @@ export default function (pi: ExtensionAPI) {
 		label: 'Report findings',
 		description:
 			'Report the bugs you found and verified. Call once at the end with every finding, then stop. ' +
-			'An empty array is a valid answer: most changes have no bug.',
+			'An empty array is a valid answer: most changes have no bug. Every finding must carry the `probe` ' +
+			'command that demonstrates it; the harness re-runs that command on the head and on the merge base.',
 		parameters,
 		// `execute` is a method of the definition, not a second argument: passing it separately
 		// produced a tool the model could call and the runtime could not run.

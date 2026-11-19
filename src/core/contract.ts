@@ -11,7 +11,15 @@ export interface FindingInput {
   title: string;
   detail?: string;
   end_line?: number | null;
+  /**
+   * The exact command that demonstrates the defect, run from the repository root. It must exit
+   * non-zero when the bug is present. `verify/verify.py` re-runs it on the merge base and on the
+   * head; a claim with no command is a claim nobody checked.
+   */
+  probe?: string;
 }
+/** A probe longer than this is not a reproduction, it is a script; reject rather than truncate. */
+export const MAX_PROBE_CHARS = 4000;
 /** Optional fields let live, legacy-marker and resolved records share this API. */
 export interface ThreadRecord {
   path?: string | null;
@@ -42,7 +50,15 @@ export interface FindingRecord extends FindingInput {
   detail: string;
   end_line: number | null;
   fid: string;
+  probe: string;
 }
+/**
+ * Verification is carried beside the record, not inside it: it is decided by `finish` from the
+ * verifier's output, never by the payload, and it must not change `fid` (a verification verdict
+ * re-keys nothing). A WeakMap keeps it out of the JSON, so the wire contract and the replay corpus
+ * are unchanged.
+ */
+const VERIFICATION = new WeakMap<Finding, 'verified' | 'unverified'>();
 export class Finding implements FindingRecord {
   path: string;
   line: number;
@@ -51,14 +67,21 @@ export class Finding implements FindingRecord {
   detail: string;
   end_line: number | null;
   fid: string;
-  constructor({ path, line, severity, title, detail = '', end_line = null }: FindingInput) {
+  probe: string;
+  constructor({ path, line, severity, title, detail = '', end_line = null, probe = '' }: FindingInput) {
     this.path = path;
     this.line = line;
     this.severity = severity;
     this.title = title;
     this.detail = detail;
     this.end_line = Finding._norm_end_line(end_line, line);
+    this.probe = typeof probe === 'string' ? trim(probe) : '';
     this.fid = this._compute_fid();
+  }
+  get verification(): 'verified' | 'unverified' | null { return VERIFICATION.get(this) ?? null; }
+  set verification(value: 'verified' | 'unverified' | null) {
+    if (value === null) VERIFICATION.delete(this);
+    else VERIFICATION.set(this, value);
   }
   static _norm_end_line(end_line: number | null, line?: number | null): number | null {
     if (end_line === null || (line != null && end_line < line)) return null;
@@ -200,7 +223,11 @@ export function _coerce_finding(entry: unknown): Finding | null {
   severity = Object.hasOwn(aliases, severity) ? aliases[severity] : severity;
   if (!['high', 'medium', 'low'].includes(severity)) severity = 'medium';
   const end = typeof entry.end_line === 'number' && Number.isFinite(entry.end_line) ? integer(entry.end_line) : null;
-  return new Finding({ path: trim(path), line: integer(line), severity, title: trim(title), detail: typeof entry.detail === 'string' ? trim(entry.detail) : '', end_line: end });
+  const probe = typeof entry.probe === 'string' ? trim(entry.probe) : '';
+  // An over-long probe is rejected, never truncated: the verifier would then run a different
+  // command than the one the reviewer wrote, and call the result evidence.
+  if (probe.length > MAX_PROBE_CHARS || probe.includes('\u0000')) return null;
+  return new Finding({ path: trim(path), line: integer(line), severity, title: trim(title), detail: typeof entry.detail === 'string' ? trim(entry.detail) : '', end_line: end, probe });
 }
 
 /** Decode one JSON value (also Python json's NaN/Infinity constants) without eval.
@@ -317,7 +344,12 @@ export function dedupe_findings(findings: readonly Finding[]): Finding[] {
     const key = JSON.stringify([f.path, f.line, f.title.toLowerCase()]);
     const cur = byKey.get(key);
     if (!cur) byKey.set(key, f);
-    else if (SEVERITY_RANK[f.severity] < SEVERITY_RANK[cur.severity]) cur.severity = f.severity;
+    else {
+      if (SEVERITY_RANK[f.severity] < SEVERITY_RANK[cur.severity]) cur.severity = f.severity;
+      // One copy of a claim reproduced is the claim reproduced: the merge keeps the
+      // strongest evidence, not the first one seen.
+      if (f.verification === 'verified') cur.verification = 'verified';
+    }
   }
   const out = Array.from(byKey.values());
   out.forEach(f => f.rekey());

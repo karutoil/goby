@@ -104,6 +104,10 @@ for that repository.
 | `GOBY_BASH_TIMEOUT_S` | wall clock for one shell command; a command with none can run until the job timeout |
 | `GOBY_MAX_DIFF_LINES` | larger diffs are skipped: the review says so and the gate fails closed |
 | `GOBY_MAX_FINDINGS` | findings posted, highest severity first; the rest are counted in the summary |
+| `GOBY_VERIFY` | `off`, `advisory` (default) or `required`: whether the harness re-runs each finding's `probe` against the head and the merge base. `required` publishes only reproduced findings, and a high-severity claim nobody could reproduce fails the gate |
+| `GOBY_MAX_PROBES` | findings probed per review; the rest are withheld with a reason |
+| `GOBY_PROBE_TIMEOUT_S` | wall clock for one probe |
+| `GOBY_VERIFY_BUDGET_S` | wall clock for the whole verification pass |
 | job `timeout-minutes` | the outer backstop, set in the workflow. It has to stay above `GOBY_AGENT_TIMEOUT_S` plus the clone and publish around it: a job the runner stops runs no further step, so nothing would resolve the statuses `prepare` posted |
 
 ## What the reviewer is given
@@ -117,6 +121,30 @@ for that repository.
   reviewer. They are used after it answers: a repeat inside an open thread's span is suppressed,
   and a re-derivation of a resolved thread with a similar title is withheld. The summary names
   what was withheld instead of dropping it silently.
+
+## Verification
+
+The reviewer is asked to record, for every finding, the exact command that demonstrates it
+(`probe`). It must exit non-zero when the bug is present. After the agent answers, the harness
+re-runs that command twice, as uid 10002 with no token: once in a worktree at the head, once in a
+worktree at the merge base.
+
+| head | merge base | meaning | published |
+|---|---|---|---|
+| fails | passes | the change introduced it | yes |
+| fails | fails | it was already broken | no |
+| passes | fails | the change fixes it | no |
+| passes | passes | it did not reproduce | no |
+
+`GOBY_VERIFY=required` is what makes that table the publication rule; `advisory` posts what it
+could not reproduce with a "Not reproduced" note, and `off` is the old behaviour. The verdict is
+bound to the head and to the diff digest `prepare` computed from the API's diff, so a verdict from
+an earlier push cannot be re-used. A missing verdict is an incomplete review, never an empty one.
+
+The probe runs with an allowlisted environment (no token, no model key) and the same shell the
+agent had, in a throw-away worktree. A probe that cannot start — a missing command, an import
+error, a fixture that is not there — is recorded as a setup error and withheld, not counted
+against the change.
 
 ## Repositories that need more than the default image
 

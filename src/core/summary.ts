@@ -26,6 +26,15 @@ export interface ReviewStats {
   incomplete: string | null;
   /** The scan was bounded, not broken: the reviewer answered, it just stopped looking early. */
   caveat?: string | null;
+  /** Posted findings the harness reproduced by re-running their probe on base and head. */
+  verified: number;
+  /** Posted in `advisory` mode without a reproduction: leads, not defects. */
+  unverifiedPosted: number;
+  /** Kept out of the review because they could not be reproduced. */
+  withheld: number;
+  withheldHigh: number;
+  /** Why verification produced nothing, when it ran and did not answer. */
+  verificationNote?: string | null;
 }
 
 export function build_summary(
@@ -42,8 +51,10 @@ export function build_summary(
     'change and could run code against it; probe commands are quoted in the finding bodies where it did.',
     '',
   ];
-  if (!count && !withheld.dupes.length && !withheld.resolved.length) lines.push('No bugs found in this diff.');
-  else if (!count) lines.push('No NEW bugs in this diff. Withheld finding(s):');
+  // "No bugs found" must not appear beside a withheld finding: that is the sentence a reader
+  // quotes when they merge, and it would be false.
+  if (!count && !withheld.dupes.length && !withheld.resolved.length && !stats.withheld) lines.push('No bugs found in this diff.');
+  else if (!count) lines.push('No findings were published for this diff.');
   else lines.push(`Found **${count}** bug(s): ${inline.length} inline below, ${overflow.length} outside the diff hunks.`);
   for (const finding of overflow) {
     lines.push(`- \`${finding.path}:${finding.line}\` **[${finding.severity}]** ${finding.title} — ${finding.detail.slice(0, 300)}`);
@@ -54,6 +65,10 @@ export function build_summary(
   for (const [label, findings] of [['already-open', withheld.dupes], ['resolved re-derivation', withheld.resolved]] as const) {
     if (findings.length) lines.push('', `${findings.length} ${label} finding(s) withheld:`, ...findings.map(f => `- \`${f.path}:${f.line}\` **[${f.severity}]** ${f.title}`));
   }
+  if (stats.verified) lines.push('', `${stats.verified} posted finding(s) were reproduced by re-running the reviewer's own probe against the merge base and the head.`);
+  if (stats.unverifiedPosted) lines.push('', `${stats.unverifiedPosted} posted finding(s) were **not reproduced** by the harness; treat them as leads, not defects.`);
+  if (stats.withheld) lines.push('', `**${stats.withheld} finding(s) were withheld** because the change could not be shown to introduce them${stats.withheldHigh ? `, ${stats.withheldHigh} of them high severity` : ''}.`);
+  if (stats.verificationNote) lines.push('', `**Verification did not answer:** ${stats.verificationNote}`);
   if (stats.incomplete) lines.push('', `**This review is incomplete:** ${stats.incomplete}`);
   if (stats.caveat) lines.push('', `Partial scan: ${stats.caveat}`);
   lines.push('', `Diff: ${stats.diffLines} lines. ${stats.toolCalls} tool call(s), ${stats.elapsedS.toFixed(1)}s.`);

@@ -129,3 +129,25 @@ describe('statuses and thread writes', () => {
     await expect(resolve_thread(fake(() => ({ errors: [{ message: 'denied' }] })).client, 'T_node')).rejects.toMatchObject({ code: 200 });
   });
 });
+
+describe('the comment separates what the model said from what the harness ran', () => {
+  test('a reproduced finding carries the command that reproduced it', () => {
+    const reproduced = finding({ probe: 'pytest -q tests/test_a.py::test_x' });
+    reproduced.verification = 'verified';
+    const body = comment_body(reproduced, '0123456789abcdef');
+    expect(body).toContain('**Reproduced by re-running, on the merge base and on this head:**');
+    expect(body).toContain('```sh\npytest -q tests/test_a.py::test_x\n```');
+    expect(body).toContain('<!-- goby id=ab12');
+  });
+
+  test('an unreproduced finding says so instead of implying evidence', () => {
+    const unreproduced = finding();
+    unreproduced.verification = 'unverified';
+    expect(comment_body(unreproduced, '0123456789abcdef')).toContain('Not reproduced');
+  });
+
+  test('verification off leaves the body unchanged', () => {
+    expect(comment_body(finding(), '0123456789abcdef')).not.toContain('Reproduced');
+    expect(comment_body(finding(), '0123456789abcdef')).not.toContain('Not reproduced');
+  });
+});

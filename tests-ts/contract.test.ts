@@ -84,3 +84,38 @@ test('a findings record that is not an array is unreadable, not empty', () => {
   expect(F.emitted_findings([{kind: 'findings', findings: good}])).toEqual([good, false]);
   expect(F.emitted_findings([])).toEqual([[], false]);
 });
+
+test('a finding carries the command that demonstrates it', () => {
+  const parsed = F.parse_findings(JSON.stringify([
+    { path: 'a.py', line: 1, title: 'boom', severity: 'high', probe: '  pytest -q tests/test_a.py  ' },
+  ]));
+  expect(parsed?.[0]?.probe).toBe('pytest -q tests/test_a.py');
+  const absent = F.parse_findings(JSON.stringify([{ path: 'a.py', line: 1, title: 'boom' }]));
+  expect(absent?.[0]?.probe).toBe('');
+});
+
+test('an unusable probe is off-contract, never truncated', () => {
+  // Truncating would make the verifier run a different command than the one the reviewer wrote,
+  // and then call the result evidence.
+  const long = 'x'.repeat(F.MAX_PROBE_CHARS + 1);
+  expect(F.parse_findings(JSON.stringify([{ path: 'a.py', line: 1, title: 't', probe: long }]), true)).toBeNull();
+  expect(F.parse_findings(JSON.stringify([{ path: 'a.py', line: 1, title: 't', probe: 'a\u0000b' }]), true)).toBeNull();
+});
+
+test('verification is carried beside the record, not inside it', () => {
+  const finding = new F.Finding({ path: 'a.py', line: 1, title: 't', severity: 'high' });
+  finding.verification = 'verified';
+  expect(finding.verification).toBe('verified');
+  // The wire shape and the replay corpus must not learn a field the verifier owns.
+  expect(Object.keys({ ...finding })).not.toContain('verification');
+  expect(JSON.parse(JSON.stringify(finding))).not.toHaveProperty('verification');
+});
+
+test('deduplication keeps the strongest evidence, not the first copy', () => {
+  const first = new F.Finding({ path: 'a.py', line: 1, title: 'same', severity: 'low' });
+  const second = new F.Finding({ path: 'a.py', line: 1, title: 'same', severity: 'high' });
+  second.verification = 'verified';
+  const [merged] = F.dedupe_findings([first, second]);
+  expect(merged!.verification).toBe('verified');
+  expect(merged!.severity).toBe('high');
+});

@@ -26,6 +26,7 @@ if [[ "${GOBY_MODE:-review}" == "gate" ]]; then
   fi
   GOBY_OUT="${GOBY_OUT:-/workspace/out}" GOBY_EVENT_FILE="${GOBY_EVENT_FILE:-}" \
   GITHUB_EVENT_NAME="${GITHUB_EVENT_NAME:-}" GOBY_PR="${GOBY_PR:-}" GOBY_HEAD="${GOBY_HEAD:-}" \
+  GOBY_VERIFY="${GOBY_VERIFY:-off}" \
     node /opt/goby/reviewRun.js gate
   exit $?
 fi
@@ -40,6 +41,18 @@ if [[ ${#missing[@]} -gt 0 ]]; then
   goby_log "error: missing required input(s): ${missing[*]}"
   exit 2
 fi
+
+# The verification pass runs as its own uid: it executes the reviewed repository's commands, and
+# it must not be able to reach the token or the model key any more than the agent can.
+GOBY_VERIFY_USER="${GOBY_VERIFY_USER:-verifier}"
+GOBY_VERIFY_UID="${GOBY_VERIFY_UID:-10002}"
+goby_run_as_verifier() {
+  local extra_env=("$@")
+  runuser -u "$GOBY_VERIFY_USER" -- env -i \
+    PATH=/usr/local/bin:/usr/bin:/bin \
+    HOME="/home/$GOBY_VERIFY_USER" TMPDIR=/tmp \
+    "${extra_env[@]}"
+}
 
 # Cosmetic only (src/progress.ts): a "Goby is reviewing" note on the pull request, started once a
 # review will actually run and marked done on every exit after that. Wall-clocked and `|| true`, so
@@ -74,9 +87,13 @@ case "$PROVIDER" in
   anthropic) KEY="${ANTHROPIC_API_KEY:-}";   UPSTREAM="https://api.anthropic.com"
              KEY_HEADER="x-api-key"; KEY_SCHEME="" ;;
   openai)    KEY="${OPENAI_API_KEY:-}";      UPSTREAM="https://api.openai.com" ;;
+  # Any OpenAI-compatible endpoint: the key is whatever the workflow named, the URL is explicit.
+  # A provider with a fixed upstream cannot be pointed at a gateway, which is the whole point.
+  custom)    KEY="${GOBY_API_KEY:-${OPENAI_API_KEY:-}}"; UPSTREAM="${GOBY_UPSTREAM:-}" ;;
   *) goby_log "error: unknown provider $PROVIDER"; exit 2 ;;
 esac
 [[ -n "$KEY" ]] || { goby_log "error: no key for provider $PROVIDER"; exit 2; }
+[[ -n "${UPSTREAM:-}" ]] || { goby_log "error: provider $PROVIDER needs GOBY_UPSTREAM"; exit 2; }
 
 mkdir -p "$OUT" "$AGENT_HOME"
 
@@ -127,7 +144,7 @@ if grep -q '"reuse":true' "$OUT/prepare.json"; then
   goby_log "this head was already reviewed; refreshing the gate only"
   VERDICT_POSTED=1
   GOBY_REPO="$GOBY_REPO" GOBY_PR="$GOBY_PR" GOBY_HEAD="$GOBY_HEAD" GOBY_BASE="$GOBY_BASE" \
-  GOBY_MODEL="$MODEL" GITHUB_TOKEN="$GITHUB_TOKEN" GOBY_OUT="$OUT" \
+  GOBY_MODEL="$MODEL" GITHUB_TOKEN="$GITHUB_TOKEN" GOBY_OUT="$OUT" GOBY_VERIFY="${GOBY_VERIFY:-off}" \
     node /opt/goby/reviewRun.js finish
   exit $?
 fi
@@ -207,6 +224,25 @@ chmod 755 "$OUT"
 git config --system --add safe.directory "$REPO_DIR"
 
 cp "/opt/goby/models/models.json" "$AGENT_HOME/models.json"
+# A provider's model list is a catalog, not a constraint: a deployment names its own model id in
+# GOBY_MODEL, and an id the image never heard of has to work or every gateway is unusable.
+GOBY_PROVIDER="$PROVIDER" GOBY_MODEL="$MODEL" python3 - "$AGENT_HOME/models.json" <<'PYCATALOG'
+import json, os, sys
+path = sys.argv[1]
+with open(path, encoding="utf-8") as handle:
+    catalog = json.load(handle)
+provider = catalog.setdefault("providers", {}).setdefault(os.environ["GOBY_PROVIDER"], {
+    "baseUrl": "http://127.0.0.1:8787/v1",
+    "api": "openai-completions",
+    "apiKey": "$GOBY_MODEL_KEY",
+    "models": [],
+})
+models = provider.setdefault("models", [])
+if not any(model.get("id") == os.environ["GOBY_MODEL"] for model in models):
+    models.append({"id": os.environ["GOBY_MODEL"]})
+with open(path, "w", encoding="utf-8") as handle:
+    json.dump(catalog, handle, indent=2)
+PYCATALOG
 chown -R "$GOBY_AGENT_USER:$GOBY_AGENT_USER" "$AGENT_HOME"
 chmod 700 "$AGENT_HOME"
 
@@ -391,11 +427,41 @@ if ! grep -q '"kind":"findings"' "$AGENT_OUT/findings.jsonl" 2>/dev/null; then
   exit 1
 fi
 
+# --- verification -----------------------------------------------------------------------
+# The reviewer answered; this decides which of its answers survived. The probes it was told to
+# record are re-run on the head and on the merge base, in two throw-away worktrees, as its own uid.
+# It changes nothing the reviewer said: it writes a verdict that `finish` reads.
+VERIFY_MODE="${GOBY_VERIFY:-off}"
+VERIFY_DIR="$OUT/verify"
+if [[ "$VERIFY_MODE" != "off" ]]; then
+  DIFF_DIGEST="$(jq -r '.diff_digest // empty' "$OUT/job.json" 2>/dev/null || true)"
+  if [[ -z "$DIFF_DIGEST" ]]; then
+    goby_log "warn: no diff digest in job.json; skipping verification"
+  else
+    goby_log "verify $VERIFY_MODE: re-running reported probes against head and ${MERGE_BASE:0:10}"
+    rm -rf "$VERIFY_DIR"; mkdir -p "$VERIFY_DIR"
+    if git -C "$REPO_DIR" worktree add --detach --quiet "$VERIFY_DIR/head" "$GOBY_HEAD" \
+       && git -C "$REPO_DIR" worktree add --detach --quiet "$VERIFY_DIR/base" "$MERGE_BASE"; then
+      chown -R "$GOBY_VERIFY_UID:$GOBY_VERIFY_UID" "$VERIFY_DIR"
+      if ! goby_run_as_verifier python3 /opt/goby/verify.py \
+           --findings "$AGENT_OUT/findings.jsonl" \
+           --head-dir "$VERIFY_DIR/head" --base-dir "$VERIFY_DIR/base" --out "$VERIFY_DIR" \
+           --head "$GOBY_HEAD" --diff-sha256 "$DIFF_DIGEST" \
+           --mode "$VERIFY_MODE" --max-probes "$GOBY_MAX_PROBES" \
+           --probe-timeout "$GOBY_PROBE_TIMEOUT_S" --budget "$GOBY_VERIFY_BUDGET_S"; then
+        goby_log "warn: the verification pass did not run; finish will treat this as unverified"
+      fi
+    else
+      goby_log "warn: could not create the verification worktrees"
+    fi
+  fi
+fi
+
 # The review has answered, so from here the only thing left is this run's own publish — and a
 # SIGTERM during it must not be turned into an error status over a review that was posted.
 goby_proxy_stop
 VERDICT_POSTED=1
 GOBY_REPO="$GOBY_REPO" GOBY_PR="$GOBY_PR" GOBY_HEAD="$GOBY_HEAD" GOBY_BASE="$GOBY_BASE" \
 GOBY_MODEL="$MODEL" GITHUB_TOKEN="$GITHUB_TOKEN" GOBY_OUT="$OUT" GOBY_AGENT_OUT="$AGENT_OUT" \
-GOBY_ELAPSED_S="$AGENT_ELAPSED" GOBY_GATE="${GOBY_GATE:-off}" \
+GOBY_ELAPSED_S="$AGENT_ELAPSED" GOBY_GATE="${GOBY_GATE:-off}" GOBY_VERIFY="$VERIFY_MODE" \
   node /opt/goby/reviewRun.js finish

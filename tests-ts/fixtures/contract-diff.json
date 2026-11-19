@@ -19,7 +19,8 @@
             "title": "Off by one",
             "detail": "range excludes last element",
             "end_line": null,
-            "fid": "8f3ade1892"
+            "fid": "8f3ade1892",
+            "probe": ""
           }
         }
       ]
@@ -41,7 +42,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "039a026032"
+            "fid": "039a026032",
+            "probe": ""
           }
         }
       ]
@@ -63,7 +65,8 @@
             "title": "X",
             "detail": "",
             "end_line": null,
-            "fid": "12b4ee8745"
+            "fid": "12b4ee8745",
+            "probe": ""
           }
         }
       ]
@@ -85,7 +88,8 @@
             "title": "X",
             "detail": "",
             "end_line": null,
-            "fid": "12b4ee8745"
+            "fid": "12b4ee8745",
+            "probe": ""
           }
         }
       ]
@@ -117,7 +121,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "d3c86b0ec3"
+            "fid": "d3c86b0ec3",
+            "probe": ""
           }
         }
       ]
@@ -171,7 +176,8 @@
           "title": "t0",
           "detail": "",
           "end_line": null,
-          "fid": "01ba0e0483"
+          "fid": "01ba0e0483",
+          "probe": ""
         }
       }
     },
@@ -194,7 +200,8 @@
           "title": "t1",
           "detail": "",
           "end_line": null,
-          "fid": "06705652ab"
+          "fid": "06705652ab",
+          "probe": ""
         }
       }
     },
@@ -217,7 +224,8 @@
           "title": "t2",
           "detail": "",
           "end_line": null,
-          "fid": "6b0cca1e19"
+          "fid": "6b0cca1e19",
+          "probe": ""
         }
       }
     },
@@ -240,7 +248,8 @@
           "title": "t3",
           "detail": "",
           "end_line": null,
-          "fid": "5cea907568"
+          "fid": "5cea907568",
+          "probe": ""
         }
       }
     },
@@ -263,7 +272,8 @@
           "title": "t4",
           "detail": "",
           "end_line": null,
-          "fid": "1eeacc3d3b"
+          "fid": "1eeacc3d3b",
+          "probe": ""
         }
       }
     },
@@ -286,7 +296,8 @@
           "title": "t5",
           "detail": "",
           "end_line": null,
-          "fid": "e11343b48b"
+          "fid": "e11343b48b",
+          "probe": ""
         }
       }
     },
@@ -309,7 +320,8 @@
           "title": "t6",
           "detail": "",
           "end_line": null,
-          "fid": "a1e6134672"
+          "fid": "a1e6134672",
+          "probe": ""
         }
       }
     },
@@ -332,7 +344,8 @@
           "title": "t7",
           "detail": "",
           "end_line": null,
-          "fid": "ba390dcb64"
+          "fid": "ba390dcb64",
+          "probe": ""
         }
       }
     },
@@ -355,7 +368,8 @@
           "title": "t8",
           "detail": "",
           "end_line": null,
-          "fid": "0348a35ea6"
+          "fid": "0348a35ea6",
+          "probe": ""
         }
       }
     },
@@ -378,7 +392,8 @@
           "title": "t9",
           "detail": "",
           "end_line": null,
-          "fid": "ae0d96859c"
+          "fid": "ae0d96859c",
+          "probe": ""
         }
       }
     },
@@ -401,7 +416,8 @@
           "title": "t10",
           "detail": "",
           "end_line": null,
-          "fid": "530745c4fb"
+          "fid": "530745c4fb",
+          "probe": ""
         }
       }
     },
@@ -424,7 +440,8 @@
           "title": "t11",
           "detail": "",
           "end_line": null,
-          "fid": "ceba4fa8c0"
+          "fid": "ceba4fa8c0",
+          "probe": ""
         }
       }
     },
@@ -447,7 +464,8 @@
           "title": "t12",
           "detail": "",
           "end_line": null,
-          "fid": "8fd5f6a961"
+          "fid": "8fd5f6a961",
+          "probe": ""
         }
       }
     },
@@ -470,7 +488,8 @@
           "title": "t13",
           "detail": "",
           "end_line": null,
-          "fid": "913200c2d3"
+          "fid": "913200c2d3",
+          "probe": ""
         }
       }
     },
@@ -493,7 +512,8 @@
           "title": "t14",
           "detail": "",
           "end_line": null,
-          "fid": "195405d461"
+          "fid": "195405d461",
+          "probe": ""
         }
       }
     },
@@ -516,7 +536,8 @@
           "title": "t15",
           "detail": "",
           "end_line": null,
-          "fid": "82f958a46c"
+          "fid": "82f958a46c",
+          "probe": ""
         }
       }
     },
@@ -539,7 +560,8 @@
           "title": "t16",
           "detail": "",
           "end_line": null,
-          "fid": "b526885c39"
+          "fid": "b526885c39",
+          "probe": ""
         }
       }
     },
@@ -562,7 +584,8 @@
           "title": "t17",
           "detail": "",
           "end_line": null,
-          "fid": "7b7a46fa6f"
+          "fid": "7b7a46fa6f",
+          "probe": ""
         }
       }
     },
@@ -585,7 +608,8 @@
           "title": "t18",
           "detail": "",
           "end_line": null,
-          "fid": "ad5faf7ac3"
+          "fid": "ad5faf7ac3",
+          "probe": ""
         }
       }
     },
@@ -608,7 +632,8 @@
           "title": "t19",
           "detail": "",
           "end_line": null,
-          "fid": "2a64645bf6"
+          "fid": "2a64645bf6",
+          "probe": ""
         }
       }
     },
@@ -631,7 +656,8 @@
           "title": "t20",
           "detail": "",
           "end_line": null,
-          "fid": "3cead62b11"
+          "fid": "3cead62b11",
+          "probe": ""
         }
       }
     },
@@ -654,7 +680,8 @@
           "title": "t21",
           "detail": "",
           "end_line": null,
-          "fid": "9ede209b99"
+          "fid": "9ede209b99",
+          "probe": ""
         }
       }
     },
@@ -677,7 +704,8 @@
           "title": "t22",
           "detail": "",
           "end_line": null,
-          "fid": "7eff751c03"
+          "fid": "7eff751c03",
+          "probe": ""
         }
       }
     },
@@ -700,7 +728,8 @@
           "title": "t23",
           "detail": "",
           "end_line": null,
-          "fid": "25796763f7"
+          "fid": "25796763f7",
+          "probe": ""
         }
       }
     },
@@ -723,7 +752,8 @@
           "title": "t24",
           "detail": "",
           "end_line": null,
-          "fid": "183ac1b908"
+          "fid": "183ac1b908",
+          "probe": ""
         }
       }
     },
@@ -746,7 +776,8 @@
           "title": "t25",
           "detail": "",
           "end_line": null,
-          "fid": "796ff95450"
+          "fid": "796ff95450",
+          "probe": ""
         }
       }
     },
@@ -769,7 +800,8 @@
           "title": "t26",
           "detail": "",
           "end_line": null,
-          "fid": "d090778d2c"
+          "fid": "d090778d2c",
+          "probe": ""
         }
       }
     },
@@ -792,7 +824,8 @@
           "title": "t27",
           "detail": "",
           "end_line": null,
-          "fid": "a494fd9c0f"
+          "fid": "a494fd9c0f",
+          "probe": ""
         }
       }
     },
@@ -815,7 +848,8 @@
           "title": "t28",
           "detail": "",
           "end_line": null,
-          "fid": "87a33895e5"
+          "fid": "87a33895e5",
+          "probe": ""
         }
       }
     },
@@ -838,7 +872,8 @@
           "title": "t29",
           "detail": "",
           "end_line": null,
-          "fid": "e33ae98972"
+          "fid": "e33ae98972",
+          "probe": ""
         }
       }
     },
@@ -861,7 +896,8 @@
           "title": "the important one",
           "detail": "",
           "end_line": null,
-          "fid": "eefb3cd172"
+          "fid": "eefb3cd172",
+          "probe": ""
         }
       }
     },
@@ -879,7 +915,8 @@
               "title": "t0",
               "detail": "",
               "end_line": null,
-              "fid": "01ba0e0483"
+              "fid": "01ba0e0483",
+              "probe": ""
             }
           },
           {
@@ -890,7 +927,8 @@
               "title": "t1",
               "detail": "",
               "end_line": null,
-              "fid": "06705652ab"
+              "fid": "06705652ab",
+              "probe": ""
             }
           },
           {
@@ -901,7 +939,8 @@
               "title": "t2",
               "detail": "",
               "end_line": null,
-              "fid": "6b0cca1e19"
+              "fid": "6b0cca1e19",
+              "probe": ""
             }
           },
           {
@@ -912,7 +951,8 @@
               "title": "t3",
               "detail": "",
               "end_line": null,
-              "fid": "5cea907568"
+              "fid": "5cea907568",
+              "probe": ""
             }
           },
           {
@@ -923,7 +963,8 @@
               "title": "t4",
               "detail": "",
               "end_line": null,
-              "fid": "1eeacc3d3b"
+              "fid": "1eeacc3d3b",
+              "probe": ""
             }
           },
           {
@@ -934,7 +975,8 @@
               "title": "t5",
               "detail": "",
               "end_line": null,
-              "fid": "e11343b48b"
+              "fid": "e11343b48b",
+              "probe": ""
             }
           },
           {
@@ -945,7 +987,8 @@
               "title": "t6",
               "detail": "",
               "end_line": null,
-              "fid": "a1e6134672"
+              "fid": "a1e6134672",
+              "probe": ""
             }
           },
           {
@@ -956,7 +999,8 @@
               "title": "t7",
               "detail": "",
               "end_line": null,
-              "fid": "ba390dcb64"
+              "fid": "ba390dcb64",
+              "probe": ""
             }
           },
           {
@@ -967,7 +1011,8 @@
               "title": "t8",
               "detail": "",
               "end_line": null,
-              "fid": "0348a35ea6"
+              "fid": "0348a35ea6",
+              "probe": ""
             }
           },
           {
@@ -978,7 +1023,8 @@
               "title": "t9",
               "detail": "",
               "end_line": null,
-              "fid": "ae0d96859c"
+              "fid": "ae0d96859c",
+              "probe": ""
             }
           },
           {
@@ -989,7 +1035,8 @@
               "title": "t10",
               "detail": "",
               "end_line": null,
-              "fid": "530745c4fb"
+              "fid": "530745c4fb",
+              "probe": ""
             }
           },
           {
@@ -1000,7 +1047,8 @@
               "title": "t11",
               "detail": "",
               "end_line": null,
-              "fid": "ceba4fa8c0"
+              "fid": "ceba4fa8c0",
+              "probe": ""
             }
           },
           {
@@ -1011,7 +1059,8 @@
               "title": "t12",
               "detail": "",
               "end_line": null,
-              "fid": "8fd5f6a961"
+              "fid": "8fd5f6a961",
+              "probe": ""
             }
           },
           {
@@ -1022,7 +1071,8 @@
               "title": "t13",
               "detail": "",
               "end_line": null,
-              "fid": "913200c2d3"
+              "fid": "913200c2d3",
+              "probe": ""
             }
           },
           {
@@ -1033,7 +1083,8 @@
               "title": "t14",
               "detail": "",
               "end_line": null,
-              "fid": "195405d461"
+              "fid": "195405d461",
+              "probe": ""
             }
           },
           {
@@ -1044,7 +1095,8 @@
               "title": "t15",
               "detail": "",
               "end_line": null,
-              "fid": "82f958a46c"
+              "fid": "82f958a46c",
+              "probe": ""
             }
           },
           {
@@ -1055,7 +1107,8 @@
               "title": "t16",
               "detail": "",
               "end_line": null,
-              "fid": "b526885c39"
+              "fid": "b526885c39",
+              "probe": ""
             }
           },
           {
@@ -1066,7 +1119,8 @@
               "title": "t17",
               "detail": "",
               "end_line": null,
-              "fid": "7b7a46fa6f"
+              "fid": "7b7a46fa6f",
+              "probe": ""
             }
           },
           {
@@ -1077,7 +1131,8 @@
               "title": "t18",
               "detail": "",
               "end_line": null,
-              "fid": "ad5faf7ac3"
+              "fid": "ad5faf7ac3",
+              "probe": ""
             }
           },
           {
@@ -1088,7 +1143,8 @@
               "title": "t19",
               "detail": "",
               "end_line": null,
-              "fid": "2a64645bf6"
+              "fid": "2a64645bf6",
+              "probe": ""
             }
           },
           {
@@ -1099,7 +1155,8 @@
               "title": "t20",
               "detail": "",
               "end_line": null,
-              "fid": "3cead62b11"
+              "fid": "3cead62b11",
+              "probe": ""
             }
           },
           {
@@ -1110,7 +1167,8 @@
               "title": "t21",
               "detail": "",
               "end_line": null,
-              "fid": "9ede209b99"
+              "fid": "9ede209b99",
+              "probe": ""
             }
           },
           {
@@ -1121,7 +1179,8 @@
               "title": "t22",
               "detail": "",
               "end_line": null,
-              "fid": "7eff751c03"
+              "fid": "7eff751c03",
+              "probe": ""
             }
           },
           {
@@ -1132,7 +1191,8 @@
               "title": "t23",
               "detail": "",
               "end_line": null,
-              "fid": "25796763f7"
+              "fid": "25796763f7",
+              "probe": ""
             }
           },
           {
@@ -1143,7 +1203,8 @@
               "title": "t24",
               "detail": "",
               "end_line": null,
-              "fid": "183ac1b908"
+              "fid": "183ac1b908",
+              "probe": ""
             }
           },
           {
@@ -1154,7 +1215,8 @@
               "title": "t25",
               "detail": "",
               "end_line": null,
-              "fid": "796ff95450"
+              "fid": "796ff95450",
+              "probe": ""
             }
           },
           {
@@ -1165,7 +1227,8 @@
               "title": "t26",
               "detail": "",
               "end_line": null,
-              "fid": "d090778d2c"
+              "fid": "d090778d2c",
+              "probe": ""
             }
           },
           {
@@ -1176,7 +1239,8 @@
               "title": "t27",
               "detail": "",
               "end_line": null,
-              "fid": "a494fd9c0f"
+              "fid": "a494fd9c0f",
+              "probe": ""
             }
           },
           {
@@ -1187,7 +1251,8 @@
               "title": "t28",
               "detail": "",
               "end_line": null,
-              "fid": "87a33895e5"
+              "fid": "87a33895e5",
+              "probe": ""
             }
           },
           {
@@ -1198,7 +1263,8 @@
               "title": "t29",
               "detail": "",
               "end_line": null,
-              "fid": "e33ae98972"
+              "fid": "e33ae98972",
+              "probe": ""
             }
           },
           {
@@ -1209,7 +1275,8 @@
               "title": "the important one",
               "detail": "",
               "end_line": null,
-              "fid": "eefb3cd172"
+              "fid": "eefb3cd172",
+              "probe": ""
             }
           }
         ]
@@ -1227,7 +1294,8 @@
               "title": "the important one",
               "detail": "",
               "end_line": null,
-              "fid": "eefb3cd172"
+              "fid": "eefb3cd172",
+              "probe": ""
             }
           },
           {
@@ -1238,7 +1306,8 @@
               "title": "t0",
               "detail": "",
               "end_line": null,
-              "fid": "01ba0e0483"
+              "fid": "01ba0e0483",
+              "probe": ""
             }
           },
           {
@@ -1249,7 +1318,8 @@
               "title": "t1",
               "detail": "",
               "end_line": null,
-              "fid": "06705652ab"
+              "fid": "06705652ab",
+              "probe": ""
             }
           },
           {
@@ -1260,7 +1330,8 @@
               "title": "t2",
               "detail": "",
               "end_line": null,
-              "fid": "6b0cca1e19"
+              "fid": "6b0cca1e19",
+              "probe": ""
             }
           },
           {
@@ -1271,7 +1342,8 @@
               "title": "t3",
               "detail": "",
               "end_line": null,
-              "fid": "5cea907568"
+              "fid": "5cea907568",
+              "probe": ""
             }
           },
           {
@@ -1282,7 +1354,8 @@
               "title": "t4",
               "detail": "",
               "end_line": null,
-              "fid": "1eeacc3d3b"
+              "fid": "1eeacc3d3b",
+              "probe": ""
             }
           },
           {
@@ -1293,7 +1366,8 @@
               "title": "t5",
               "detail": "",
               "end_line": null,
-              "fid": "e11343b48b"
+              "fid": "e11343b48b",
+              "probe": ""
             }
           },
           {
@@ -1304,7 +1378,8 @@
               "title": "t6",
               "detail": "",
               "end_line": null,
-              "fid": "a1e6134672"
+              "fid": "a1e6134672",
+              "probe": ""
             }
           },
           {
@@ -1315,7 +1390,8 @@
               "title": "t7",
               "detail": "",
               "end_line": null,
-              "fid": "ba390dcb64"
+              "fid": "ba390dcb64",
+              "probe": ""
             }
           },
           {
@@ -1326,7 +1402,8 @@
               "title": "t8",
               "detail": "",
               "end_line": null,
-              "fid": "0348a35ea6"
+              "fid": "0348a35ea6",
+              "probe": ""
             }
           },
           {
@@ -1337,7 +1414,8 @@
               "title": "t9",
               "detail": "",
               "end_line": null,
-              "fid": "ae0d96859c"
+              "fid": "ae0d96859c",
+              "probe": ""
             }
           },
           {
@@ -1348,7 +1426,8 @@
               "title": "t10",
               "detail": "",
               "end_line": null,
-              "fid": "530745c4fb"
+              "fid": "530745c4fb",
+              "probe": ""
             }
           },
           {
@@ -1359,7 +1438,8 @@
               "title": "t11",
               "detail": "",
               "end_line": null,
-              "fid": "ceba4fa8c0"
+              "fid": "ceba4fa8c0",
+              "probe": ""
             }
           },
           {
@@ -1370,7 +1450,8 @@
               "title": "t12",
               "detail": "",
               "end_line": null,
-              "fid": "8fd5f6a961"
+              "fid": "8fd5f6a961",
+              "probe": ""
             }
           },
           {
@@ -1381,7 +1462,8 @@
               "title": "t13",
               "detail": "",
               "end_line": null,
-              "fid": "913200c2d3"
+              "fid": "913200c2d3",
+              "probe": ""
             }
           },
           {
@@ -1392,7 +1474,8 @@
               "title": "t14",
               "detail": "",
               "end_line": null,
-              "fid": "195405d461"
+              "fid": "195405d461",
+              "probe": ""
             }
           },
           {
@@ -1403,7 +1486,8 @@
               "title": "t15",
               "detail": "",
               "end_line": null,
-              "fid": "82f958a46c"
+              "fid": "82f958a46c",
+              "probe": ""
             }
           },
           {
@@ -1414,7 +1498,8 @@
               "title": "t16",
               "detail": "",
               "end_line": null,
-              "fid": "b526885c39"
+              "fid": "b526885c39",
+              "probe": ""
             }
           },
           {
@@ -1425,7 +1510,8 @@
               "title": "t17",
               "detail": "",
               "end_line": null,
-              "fid": "7b7a46fa6f"
+              "fid": "7b7a46fa6f",
+              "probe": ""
             }
           },
           {
@@ -1436,7 +1522,8 @@
               "title": "t18",
               "detail": "",
               "end_line": null,
-              "fid": "ad5faf7ac3"
+              "fid": "ad5faf7ac3",
+              "probe": ""
             }
           },
           {
@@ -1447,7 +1534,8 @@
               "title": "t19",
               "detail": "",
               "end_line": null,
-              "fid": "2a64645bf6"
+              "fid": "2a64645bf6",
+              "probe": ""
             }
           },
           {
@@ -1458,7 +1546,8 @@
               "title": "t20",
               "detail": "",
               "end_line": null,
-              "fid": "3cead62b11"
+              "fid": "3cead62b11",
+              "probe": ""
             }
           },
           {
@@ -1469,7 +1558,8 @@
               "title": "t21",
               "detail": "",
               "end_line": null,
-              "fid": "9ede209b99"
+              "fid": "9ede209b99",
+              "probe": ""
             }
           },
           {
@@ -1480,7 +1570,8 @@
               "title": "t22",
               "detail": "",
               "end_line": null,
-              "fid": "7eff751c03"
+              "fid": "7eff751c03",
+              "probe": ""
             }
           },
           {
@@ -1491,7 +1582,8 @@
               "title": "t23",
               "detail": "",
               "end_line": null,
-              "fid": "25796763f7"
+              "fid": "25796763f7",
+              "probe": ""
             }
           },
           {
@@ -1502,7 +1594,8 @@
               "title": "t24",
               "detail": "",
               "end_line": null,
-              "fid": "183ac1b908"
+              "fid": "183ac1b908",
+              "probe": ""
             }
           },
           {
@@ -1513,7 +1606,8 @@
               "title": "t25",
               "detail": "",
               "end_line": null,
-              "fid": "796ff95450"
+              "fid": "796ff95450",
+              "probe": ""
             }
           },
           {
@@ -1524,7 +1618,8 @@
               "title": "t26",
               "detail": "",
               "end_line": null,
-              "fid": "d090778d2c"
+              "fid": "d090778d2c",
+              "probe": ""
             }
           },
           {
@@ -1535,7 +1630,8 @@
               "title": "t27",
               "detail": "",
               "end_line": null,
-              "fid": "a494fd9c0f"
+              "fid": "a494fd9c0f",
+              "probe": ""
             }
           },
           {
@@ -1546,7 +1642,8 @@
               "title": "t28",
               "detail": "",
               "end_line": null,
-              "fid": "87a33895e5"
+              "fid": "87a33895e5",
+              "probe": ""
             }
           }
         ],
@@ -1824,7 +1921,8 @@
           "title": "Off by one",
           "detail": "",
           "end_line": null,
-          "fid": "a43084f480"
+          "fid": "a43084f480",
+          "probe": ""
         }
       }
     },
@@ -1847,7 +1945,8 @@
           "title": "off by one",
           "detail": "",
           "end_line": null,
-          "fid": "f83786360f"
+          "fid": "f83786360f",
+          "probe": ""
         }
       }
     },
@@ -1870,7 +1969,8 @@
           "title": "Off by one",
           "detail": "",
           "end_line": null,
-          "fid": "a43084f480"
+          "fid": "a43084f480",
+          "probe": ""
         }
       }
     },
@@ -1893,7 +1993,8 @@
           "title": "off by one",
           "detail": "",
           "end_line": null,
-          "fid": "a43084f480"
+          "fid": "a43084f480",
+          "probe": ""
         }
       }
     },
@@ -1911,7 +2012,8 @@
               "title": "Off by one",
               "detail": "",
               "end_line": null,
-              "fid": "a43084f480"
+              "fid": "a43084f480",
+              "probe": ""
             }
           },
           {
@@ -1922,7 +2024,8 @@
               "title": "off by one",
               "detail": "",
               "end_line": null,
-              "fid": "a43084f480"
+              "fid": "a43084f480",
+              "probe": ""
             }
           }
         ]
@@ -1937,7 +2040,8 @@
             "title": "Off by one",
             "detail": "",
             "end_line": null,
-            "fid": "a43084f480"
+            "fid": "a43084f480",
+            "probe": ""
           }
         }
       ]
@@ -1956,7 +2060,8 @@
               "title": "off by one",
               "detail": "",
               "end_line": null,
-              "fid": "a43084f480"
+              "fid": "a43084f480",
+              "probe": ""
             }
           },
           {
@@ -1967,7 +2072,8 @@
               "title": "Off by one",
               "detail": "",
               "end_line": null,
-              "fid": "a43084f480"
+              "fid": "a43084f480",
+              "probe": ""
             }
           }
         ]
@@ -1982,7 +2088,8 @@
             "title": "off by one",
             "detail": "",
             "end_line": null,
-            "fid": "a43084f480"
+            "fid": "a43084f480",
+            "probe": ""
           }
         }
       ]
@@ -2006,7 +2113,8 @@
           "title": "A",
           "detail": "",
           "end_line": null,
-          "fid": "0fdd12c260"
+          "fid": "0fdd12c260",
+          "probe": ""
         }
       }
     },
@@ -2029,7 +2137,8 @@
           "title": "a",
           "detail": "",
           "end_line": null,
-          "fid": "0fdd12c260"
+          "fid": "0fdd12c260",
+          "probe": ""
         }
       }
     },
@@ -2047,7 +2156,8 @@
               "title": "A",
               "detail": "",
               "end_line": null,
-              "fid": "0fdd12c260"
+              "fid": "0fdd12c260",
+              "probe": ""
             }
           },
           {
@@ -2058,7 +2168,8 @@
               "title": "a",
               "detail": "",
               "end_line": null,
-              "fid": "0fdd12c260"
+              "fid": "0fdd12c260",
+              "probe": ""
             }
           }
         ]
@@ -2073,7 +2184,8 @@
             "title": "A",
             "detail": "",
             "end_line": null,
-            "fid": "0fdd12c260"
+            "fid": "0fdd12c260",
+            "probe": ""
           }
         }
       ]
@@ -2097,7 +2209,8 @@
           "title": "A",
           "detail": "",
           "end_line": null,
-          "fid": "4423496aa7"
+          "fid": "4423496aa7",
+          "probe": ""
         }
       }
     },
@@ -2120,7 +2233,8 @@
           "title": "B",
           "detail": "",
           "end_line": null,
-          "fid": "fd75fb0860"
+          "fid": "fd75fb0860",
+          "probe": ""
         }
       }
     },
@@ -2143,7 +2257,8 @@
           "title": "a",
           "detail": "",
           "end_line": null,
-          "fid": "4423496aa7"
+          "fid": "4423496aa7",
+          "probe": ""
         }
       }
     },
@@ -2161,7 +2276,8 @@
               "title": "A",
               "detail": "",
               "end_line": null,
-              "fid": "4423496aa7"
+              "fid": "4423496aa7",
+              "probe": ""
             }
           },
           {
@@ -2172,7 +2288,8 @@
               "title": "B",
               "detail": "",
               "end_line": null,
-              "fid": "fd75fb0860"
+              "fid": "fd75fb0860",
+              "probe": ""
             }
           },
           {
@@ -2183,7 +2300,8 @@
               "title": "a",
               "detail": "",
               "end_line": null,
-              "fid": "4423496aa7"
+              "fid": "4423496aa7",
+              "probe": ""
             }
           }
         ]
@@ -2198,7 +2316,8 @@
             "title": "A",
             "detail": "",
             "end_line": null,
-            "fid": "4423496aa7"
+            "fid": "4423496aa7",
+            "probe": ""
           }
         },
         {
@@ -2209,7 +2328,8 @@
             "title": "B",
             "detail": "",
             "end_line": null,
-            "fid": "fd75fb0860"
+            "fid": "fd75fb0860",
+            "probe": ""
           }
         }
       ]
@@ -2281,7 +2401,8 @@
             "title": "ok",
             "detail": "",
             "end_line": null,
-            "fid": "d234171292"
+            "fid": "d234171292",
+            "probe": ""
           }
         }
       ]
@@ -2303,7 +2424,8 @@
             "title": "t1",
             "detail": "",
             "end_line": null,
-            "fid": "06705652ab"
+            "fid": "06705652ab",
+            "probe": ""
           }
         },
         {
@@ -2314,7 +2436,8 @@
             "title": "t2",
             "detail": "",
             "end_line": null,
-            "fid": "6b0cca1e19"
+            "fid": "6b0cca1e19",
+            "probe": ""
           }
         }
       ]
@@ -2336,7 +2459,8 @@
             "title": "Same Title",
             "detail": "",
             "end_line": null,
-            "fid": "43833280b0"
+            "fid": "43833280b0",
+            "probe": ""
           }
         },
         {
@@ -2347,7 +2471,8 @@
             "title": "same title",
             "detail": "",
             "end_line": null,
-            "fid": "ffc51d82f8"
+            "fid": "ffc51d82f8",
+            "probe": ""
           }
         }
       ]
@@ -2371,7 +2496,8 @@
           "title": "Off by one",
           "detail": "",
           "end_line": null,
-          "fid": "8f3ade1892"
+          "fid": "8f3ade1892",
+          "probe": ""
         }
       }
     },
@@ -2394,7 +2520,8 @@
           "title": "off by one",
           "detail": "",
           "end_line": null,
-          "fid": "8f3ade1892"
+          "fid": "8f3ade1892",
+          "probe": ""
         }
       }
     },
@@ -2865,7 +2992,8 @@
           "title": "t",
           "detail": "",
           "end_line": null,
-          "fid": "649e4ea600"
+          "fid": "649e4ea600",
+          "probe": ""
         }
       }
     },
@@ -2889,7 +3017,8 @@
           "title": "t",
           "detail": "",
           "end_line": null,
-          "fid": "649e4ea600"
+          "fid": "649e4ea600",
+          "probe": ""
         }
       }
     },
@@ -2913,7 +3042,8 @@
           "title": "t",
           "detail": "",
           "end_line": 12,
-          "fid": "649e4ea600"
+          "fid": "649e4ea600",
+          "probe": ""
         }
       }
     },
@@ -2934,7 +3064,8 @@
             "title": "T",
             "detail": "D",
             "end_line": 9,
-            "fid": "d4c9073fe2"
+            "fid": "d4c9073fe2",
+            "probe": ""
           }
         }
       ]
@@ -2956,7 +3087,8 @@
             "title": "T",
             "detail": "D",
             "end_line": null,
-            "fid": "d4c9073fe2"
+            "fid": "d4c9073fe2",
+            "probe": ""
           }
         }
       ]
@@ -2978,7 +3110,8 @@
             "title": "T",
             "detail": "D",
             "end_line": null,
-            "fid": "d4c9073fe2"
+            "fid": "d4c9073fe2",
+            "probe": ""
           }
         }
       ]
@@ -3116,7 +3249,8 @@
           "title": "same position",
           "detail": "",
           "end_line": null,
-          "fid": "0632756fa1"
+          "fid": "0632756fa1",
+          "probe": ""
         }
       }
     },
@@ -3139,7 +3273,8 @@
           "title": "re-flagged",
           "detail": "",
           "end_line": null,
-          "fid": "cfd0eea19b"
+          "fid": "cfd0eea19b",
+          "probe": ""
         }
       }
     },
@@ -3162,7 +3297,8 @@
           "title": "new",
           "detail": "",
           "end_line": null,
-          "fid": "786be8c31d"
+          "fid": "786be8c31d",
+          "probe": ""
         }
       }
     },
@@ -3180,7 +3316,8 @@
               "title": "same position",
               "detail": "",
               "end_line": null,
-              "fid": "0632756fa1"
+              "fid": "0632756fa1",
+              "probe": ""
             }
           },
           {
@@ -3191,7 +3328,8 @@
               "title": "re-flagged",
               "detail": "",
               "end_line": null,
-              "fid": "cfd0eea19b"
+              "fid": "cfd0eea19b",
+              "probe": ""
             }
           },
           {
@@ -3202,7 +3340,8 @@
               "title": "new",
               "detail": "",
               "end_line": null,
-              "fid": "786be8c31d"
+              "fid": "786be8c31d",
+              "probe": ""
             }
           }
         ],
@@ -3256,7 +3395,8 @@
               "title": "re-flagged",
               "detail": "",
               "end_line": null,
-              "fid": "cfd0eea19b"
+              "fid": "cfd0eea19b",
+              "probe": ""
             }
           },
           {
@@ -3267,7 +3407,8 @@
               "title": "new",
               "detail": "",
               "end_line": null,
-              "fid": "786be8c31d"
+              "fid": "786be8c31d",
+              "probe": ""
             }
           }
         ],
@@ -3280,7 +3421,8 @@
               "title": "same position",
               "detail": "",
               "end_line": null,
-              "fid": "0632756fa1"
+              "fid": "0632756fa1",
+              "probe": ""
             }
           }
         ]
@@ -3305,7 +3447,8 @@
           "title": "t",
           "detail": "",
           "end_line": null,
-          "fid": "fb53e70b17"
+          "fid": "fb53e70b17",
+          "probe": ""
         }
       }
     },
@@ -3323,7 +3466,8 @@
               "title": "t",
               "detail": "",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ],
@@ -3340,7 +3484,8 @@
               "title": "t",
               "detail": "",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ],
@@ -3366,7 +3511,8 @@
           "title": "same_box dedup re-flag",
           "detail": "",
           "end_line": null,
-          "fid": "ed227263fb"
+          "fid": "ed227263fb",
+          "probe": ""
         }
       }
     },
@@ -3389,7 +3535,8 @@
           "title": "disjoint",
           "detail": "",
           "end_line": null,
-          "fid": "0e84860390"
+          "fid": "0e84860390",
+          "probe": ""
         }
       }
     },
@@ -3412,7 +3559,8 @@
           "title": "edge touch",
           "detail": "",
           "end_line": null,
-          "fid": "fbcb5cee5f"
+          "fid": "fbcb5cee5f",
+          "probe": ""
         }
       }
     },
@@ -3430,7 +3578,8 @@
               "title": "same_box dedup re-flag",
               "detail": "",
               "end_line": null,
-              "fid": "ed227263fb"
+              "fid": "ed227263fb",
+              "probe": ""
             }
           },
           {
@@ -3441,7 +3590,8 @@
               "title": "disjoint",
               "detail": "",
               "end_line": null,
-              "fid": "0e84860390"
+              "fid": "0e84860390",
+              "probe": ""
             }
           },
           {
@@ -3452,7 +3602,8 @@
               "title": "edge touch",
               "detail": "",
               "end_line": null,
-              "fid": "fbcb5cee5f"
+              "fid": "fbcb5cee5f",
+              "probe": ""
             }
           }
         ],
@@ -3482,7 +3633,8 @@
               "title": "disjoint",
               "detail": "",
               "end_line": null,
-              "fid": "0e84860390"
+              "fid": "0e84860390",
+              "probe": ""
             }
           }
         ],
@@ -3495,7 +3647,8 @@
               "title": "same_box dedup re-flag",
               "detail": "",
               "end_line": null,
-              "fid": "ed227263fb"
+              "fid": "ed227263fb",
+              "probe": ""
             }
           },
           {
@@ -3506,7 +3659,8 @@
               "title": "edge touch",
               "detail": "",
               "end_line": null,
-              "fid": "fbcb5cee5f"
+              "fid": "fbcb5cee5f",
+              "probe": ""
             }
           }
         ]
@@ -3531,7 +3685,8 @@
           "title": "re-flag at start",
           "detail": "",
           "end_line": null,
-          "fid": "c4a78374df"
+          "fid": "c4a78374df",
+          "probe": ""
         }
       }
     },
@@ -3549,7 +3704,8 @@
               "title": "re-flag at start",
               "detail": "",
               "end_line": null,
-              "fid": "c4a78374df"
+              "fid": "c4a78374df",
+              "probe": ""
             }
           }
         ],
@@ -3580,7 +3736,8 @@
               "title": "re-flag at start",
               "detail": "",
               "end_line": null,
-              "fid": "c4a78374df"
+              "fid": "c4a78374df",
+              "probe": ""
             }
           }
         ]
@@ -3605,7 +3762,8 @@
           "title": "unrelated middle",
           "detail": "",
           "end_line": null,
-          "fid": "11df256847"
+          "fid": "11df256847",
+          "probe": ""
         }
       }
     },
@@ -3628,7 +3786,8 @@
           "title": "at current position",
           "detail": "",
           "end_line": null,
-          "fid": "20ed76bd06"
+          "fid": "20ed76bd06",
+          "probe": ""
         }
       }
     },
@@ -3646,7 +3805,8 @@
               "title": "unrelated middle",
               "detail": "",
               "end_line": null,
-              "fid": "11df256847"
+              "fid": "11df256847",
+              "probe": ""
             }
           },
           {
@@ -3657,7 +3817,8 @@
               "title": "at current position",
               "detail": "",
               "end_line": null,
-              "fid": "20ed76bd06"
+              "fid": "20ed76bd06",
+              "probe": ""
             }
           }
         ],
@@ -3687,7 +3848,8 @@
               "title": "unrelated middle",
               "detail": "",
               "end_line": null,
-              "fid": "11df256847"
+              "fid": "11df256847",
+              "probe": ""
             }
           }
         ],
@@ -3700,7 +3862,8 @@
               "title": "at current position",
               "detail": "",
               "end_line": null,
-              "fid": "20ed76bd06"
+              "fid": "20ed76bd06",
+              "probe": ""
             }
           }
         ]
@@ -3725,7 +3888,8 @@
           "title": "adjacent",
           "detail": "",
           "end_line": null,
-          "fid": "651edc4229"
+          "fid": "651edc4229",
+          "probe": ""
         }
       }
     },
@@ -3743,7 +3907,8 @@
               "title": "adjacent",
               "detail": "",
               "end_line": null,
-              "fid": "651edc4229"
+              "fid": "651edc4229",
+              "probe": ""
             }
           }
         ],
@@ -3773,7 +3938,8 @@
               "title": "adjacent",
               "detail": "",
               "end_line": null,
-              "fid": "651edc4229"
+              "fid": "651edc4229",
+              "probe": ""
             }
           }
         ],
@@ -3912,7 +4078,8 @@
           "title": "grantedTrialCents orders by id asc, not the actual grant times",
           "detail": "",
           "end_line": null,
-          "fid": "b7e9f90cb0"
+          "fid": "b7e9f90cb0",
+          "probe": ""
         }
       }
     },
@@ -3935,7 +4102,8 @@
           "title": "grantedTrialCents orders by id asc, not the actual grant time",
           "detail": "",
           "end_line": null,
-          "fid": "f9a9d05c3a"
+          "fid": "f9a9d05c3a",
+          "probe": ""
         }
       }
     },
@@ -3958,7 +4126,8 @@
           "title": "granted state with trialCents === 0 falls into the disabled branch",
           "detail": "",
           "end_line": null,
-          "fid": "d79b67a967"
+          "fid": "d79b67a967",
+          "probe": ""
         }
       }
     },
@@ -3981,7 +4150,8 @@
           "title": "something else entirely",
           "detail": "",
           "end_line": null,
-          "fid": "d95714dab2"
+          "fid": "d95714dab2",
+          "probe": ""
         }
       }
     },
@@ -4004,7 +4174,8 @@
           "title": "anything",
           "detail": "",
           "end_line": null,
-          "fid": "36403dac62"
+          "fid": "36403dac62",
+          "probe": ""
         }
       }
     },
@@ -4022,7 +4193,8 @@
               "title": "grantedTrialCents orders by id asc, not the actual grant times",
               "detail": "",
               "end_line": null,
-              "fid": "b7e9f90cb0"
+              "fid": "b7e9f90cb0",
+              "probe": ""
             }
           },
           {
@@ -4033,7 +4205,8 @@
               "title": "grantedTrialCents orders by id asc, not the actual grant time",
               "detail": "",
               "end_line": null,
-              "fid": "f9a9d05c3a"
+              "fid": "f9a9d05c3a",
+              "probe": ""
             }
           },
           {
@@ -4044,7 +4217,8 @@
               "title": "granted state with trialCents === 0 falls into the disabled branch",
               "detail": "",
               "end_line": null,
-              "fid": "d79b67a967"
+              "fid": "d79b67a967",
+              "probe": ""
             }
           },
           {
@@ -4055,7 +4229,8 @@
               "title": "something else entirely",
               "detail": "",
               "end_line": null,
-              "fid": "d95714dab2"
+              "fid": "d95714dab2",
+              "probe": ""
             }
           },
           {
@@ -4066,7 +4241,8 @@
               "title": "anything",
               "detail": "",
               "end_line": null,
-              "fid": "36403dac62"
+              "fid": "36403dac62",
+              "probe": ""
             }
           }
         ],
@@ -4098,7 +4274,8 @@
               "title": "something else entirely",
               "detail": "",
               "end_line": null,
-              "fid": "d95714dab2"
+              "fid": "d95714dab2",
+              "probe": ""
             }
           },
           {
@@ -4109,7 +4286,8 @@
               "title": "anything",
               "detail": "",
               "end_line": null,
-              "fid": "36403dac62"
+              "fid": "36403dac62",
+              "probe": ""
             }
           }
         ],
@@ -4122,7 +4300,8 @@
               "title": "grantedTrialCents orders by id asc, not the actual grant times",
               "detail": "",
               "end_line": null,
-              "fid": "b7e9f90cb0"
+              "fid": "b7e9f90cb0",
+              "probe": ""
             }
           },
           {
@@ -4133,7 +4312,8 @@
               "title": "grantedTrialCents orders by id asc, not the actual grant time",
               "detail": "",
               "end_line": null,
-              "fid": "f9a9d05c3a"
+              "fid": "f9a9d05c3a",
+              "probe": ""
             }
           },
           {
@@ -4144,7 +4324,8 @@
               "title": "granted state with trialCents === 0 falls into the disabled branch",
               "detail": "",
               "end_line": null,
-              "fid": "d79b67a967"
+              "fid": "d79b67a967",
+              "probe": ""
             }
           }
         ]
@@ -4169,7 +4350,8 @@
           "title": "off by one",
           "detail": "",
           "end_line": null,
-          "fid": "8f3ade1892"
+          "fid": "8f3ade1892",
+          "probe": ""
         }
       }
     },
@@ -4187,7 +4369,8 @@
               "title": "off by one",
               "detail": "",
               "end_line": null,
-              "fid": "8f3ade1892"
+              "fid": "8f3ade1892",
+              "probe": ""
             }
           }
         ],
@@ -4213,7 +4396,8 @@
               "title": "off by one",
               "detail": "",
               "end_line": null,
-              "fid": "8f3ade1892"
+              "fid": "8f3ade1892",
+              "probe": ""
             }
           }
         ]
@@ -4238,7 +4422,8 @@
           "title": "SQL injection in the verify-note builder",
           "detail": "",
           "end_line": null,
-          "fid": "a7e5f19195"
+          "fid": "a7e5f19195",
+          "probe": ""
         }
       }
     },
@@ -4256,7 +4441,8 @@
               "title": "SQL injection in the verify-note builder",
               "detail": "",
               "end_line": null,
-              "fid": "a7e5f19195"
+              "fid": "a7e5f19195",
+              "probe": ""
             }
           }
         ],
@@ -4281,7 +4467,8 @@
               "title": "SQL injection in the verify-note builder",
               "detail": "",
               "end_line": null,
-              "fid": "a7e5f19195"
+              "fid": "a7e5f19195",
+              "probe": ""
             }
           }
         ],
@@ -4307,7 +4494,8 @@
           "title": "t",
           "detail": "",
           "end_line": null,
-          "fid": "800e1471a4"
+          "fid": "800e1471a4",
+          "probe": ""
         }
       }
     },
@@ -4330,7 +4518,8 @@
           "title": "t",
           "detail": "",
           "end_line": null,
-          "fid": "1e8e548850"
+          "fid": "1e8e548850",
+          "probe": ""
         }
       }
     },
@@ -4348,7 +4537,8 @@
               "title": "t",
               "detail": "",
               "end_line": null,
-              "fid": "800e1471a4"
+              "fid": "800e1471a4",
+              "probe": ""
             }
           },
           {
@@ -4359,7 +4549,8 @@
               "title": "t",
               "detail": "",
               "end_line": null,
-              "fid": "1e8e548850"
+              "fid": "1e8e548850",
+              "probe": ""
             }
           }
         ],
@@ -4376,7 +4567,8 @@
               "title": "t",
               "detail": "",
               "end_line": null,
-              "fid": "800e1471a4"
+              "fid": "800e1471a4",
+              "probe": ""
             }
           },
           {
@@ -4387,7 +4579,8 @@
               "title": "t",
               "detail": "",
               "end_line": null,
-              "fid": "1e8e548850"
+              "fid": "1e8e548850",
+              "probe": ""
             }
           }
         ],
@@ -4413,7 +4606,8 @@
           "title": "same_box lookup misses the newest registry entry",
           "detail": "",
           "end_line": null,
-          "fid": "d46c236ac0"
+          "fid": "d46c236ac0",
+          "probe": ""
         }
       }
     },
@@ -4431,7 +4625,8 @@
               "title": "same_box lookup misses the newest registry entry",
               "detail": "",
               "end_line": null,
-              "fid": "d46c236ac0"
+              "fid": "d46c236ac0",
+              "probe": ""
             }
           }
         ],
@@ -4459,7 +4654,8 @@
               "title": "same_box lookup misses the newest registry entry",
               "detail": "",
               "end_line": null,
-              "fid": "d46c236ac0"
+              "fid": "d46c236ac0",
+              "probe": ""
             }
           }
         ]
@@ -4484,7 +4680,8 @@
           "title": "SQL injection in the lookup builder",
           "detail": "",
           "end_line": null,
-          "fid": "8285ce6d04"
+          "fid": "8285ce6d04",
+          "probe": ""
         }
       }
     },
@@ -4502,7 +4699,8 @@
               "title": "SQL injection in the lookup builder",
               "detail": "",
               "end_line": null,
-              "fid": "8285ce6d04"
+              "fid": "8285ce6d04",
+              "probe": ""
             }
           }
         ],
@@ -4529,7 +4727,8 @@
               "title": "SQL injection in the lookup builder",
               "detail": "",
               "end_line": null,
-              "fid": "8285ce6d04"
+              "fid": "8285ce6d04",
+              "probe": ""
             }
           }
         ],
@@ -4555,7 +4754,8 @@
           "title": "same_box lookup misses the newest registry entry",
           "detail": "",
           "end_line": null,
-          "fid": "cf2d8e8e9e"
+          "fid": "cf2d8e8e9e",
+          "probe": ""
         }
       }
     },
@@ -4573,7 +4773,8 @@
               "title": "same_box lookup misses the newest registry entry",
               "detail": "",
               "end_line": null,
-              "fid": "cf2d8e8e9e"
+              "fid": "cf2d8e8e9e",
+              "probe": ""
             }
           }
         ],
@@ -4600,7 +4801,8 @@
               "title": "same_box lookup misses the newest registry entry",
               "detail": "",
               "end_line": null,
-              "fid": "cf2d8e8e9e"
+              "fid": "cf2d8e8e9e",
+              "probe": ""
             }
           }
         ],
@@ -4626,7 +4828,8 @@
           "title": "t",
           "detail": "",
           "end_line": null,
-          "fid": "800e1471a4"
+          "fid": "800e1471a4",
+          "probe": ""
         }
       }
     },
@@ -4644,7 +4847,8 @@
               "title": "t",
               "detail": "",
               "end_line": null,
-              "fid": "800e1471a4"
+              "fid": "800e1471a4",
+              "probe": ""
             }
           }
         ],
@@ -4668,7 +4872,8 @@
               "title": "t",
               "detail": "",
               "end_line": null,
-              "fid": "800e1471a4"
+              "fid": "800e1471a4",
+              "probe": ""
             }
           }
         ],
@@ -4692,7 +4897,8 @@
             "title": "T",
             "detail": "Checked the caller. No bug.",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -4711,7 +4917,8 @@
               "title": "T",
               "detail": "Checked the caller. No bug.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -4728,7 +4935,8 @@
               "title": "T",
               "detail": "Checked the caller. No bug.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -4751,7 +4959,8 @@
             "title": "T",
             "detail": "Cosmetic inconsistency at most. (Not reporting.)",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -4770,7 +4979,8 @@
               "title": "T",
               "detail": "Cosmetic inconsistency at most. (Not reporting.)",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -4787,7 +4997,8 @@
               "title": "T",
               "detail": "Cosmetic inconsistency at most. (Not reporting.)",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -4810,7 +5021,8 @@
             "title": "T",
             "detail": "Re-examining: no bug here.",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -4829,7 +5041,8 @@
               "title": "T",
               "detail": "Re-examining: no bug here.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -4846,7 +5059,8 @@
               "title": "T",
               "detail": "Re-examining: no bug here.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -4869,7 +5083,8 @@
             "title": "T",
             "detail": "Wrote a repro and checked the code, but tests pass",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -4888,7 +5103,8 @@
               "title": "T",
               "detail": "Wrote a repro and checked the code, but tests pass",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -4905,7 +5121,8 @@
               "title": "T",
               "detail": "Wrote a repro and checked the code, but tests pass",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -4928,7 +5145,8 @@
             "title": "X divides correctly \u2014 no bug",
             "detail": "Body reports a real mechanism.",
             "end_line": null,
-            "fid": "f0e481a11f"
+            "fid": "f0e481a11f",
+            "probe": ""
           }
         }
       ]
@@ -4947,7 +5165,8 @@
               "title": "X divides correctly \u2014 no bug",
               "detail": "Body reports a real mechanism.",
               "end_line": null,
-              "fid": "f0e481a11f"
+              "fid": "f0e481a11f",
+              "probe": ""
             }
           }
         ]
@@ -4964,7 +5183,8 @@
               "title": "X divides correctly \u2014 no bug",
               "detail": "Body reports a real mechanism.",
               "end_line": null,
-              "fid": "f0e481a11f"
+              "fid": "f0e481a11f",
+              "probe": ""
             }
           }
         ]
@@ -4987,7 +5207,8 @@
             "title": "T",
             "detail": "The assertion is inverted; tests pass even when the handler is broken.",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -5006,7 +5227,8 @@
               "title": "T",
               "detail": "The assertion is inverted; tests pass even when the handler is broken.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -5022,7 +5244,8 @@
               "title": "T",
               "detail": "The assertion is inverted; tests pass even when the handler is broken.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ],
@@ -5046,7 +5269,8 @@
             "title": "T",
             "detail": "The marker check is a substring match, so it still matches. No bug there. The actual defect: if the first post raises a 422 but the review was created, the fallback posts a second review with the same head marker.",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -5065,7 +5289,8 @@
               "title": "T",
               "detail": "The marker check is a substring match, so it still matches. No bug there. The actual defect: if the first post raises a 422 but the review was created, the fallback posts a second review with the same head marker.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -5081,7 +5306,8 @@
               "title": "T",
               "detail": "The marker check is a substring match, so it still matches. No bug there. The actual defect: if the first post raises a 422 but the review was created, the fallback posts a second review with the same head marker.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ],
@@ -5105,7 +5331,8 @@
             "title": "T",
             "detail": "Not an issue for the happy path, but the retry path corrupts state.",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -5124,7 +5351,8 @@
               "title": "T",
               "detail": "Not an issue for the happy path, but the retry path corrupts state.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -5140,7 +5368,8 @@
               "title": "T",
               "detail": "Not an issue for the happy path, but the retry path corrupts state.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ],
@@ -5164,7 +5393,8 @@
             "title": "X",
             "detail": "Actually correct. No bug.",
             "end_line": null,
-            "fid": "87fd04274d"
+            "fid": "87fd04274d",
+            "probe": ""
           }
         },
         {
@@ -5175,7 +5405,8 @@
             "title": "Y",
             "detail": "Guarded upstream. Not reporting.",
             "end_line": null,
-            "fid": "aec2fb3d49"
+            "fid": "aec2fb3d49",
+            "probe": ""
           }
         }
       ]
@@ -5194,7 +5425,8 @@
               "title": "X",
               "detail": "Actually correct. No bug.",
               "end_line": null,
-              "fid": "87fd04274d"
+              "fid": "87fd04274d",
+              "probe": ""
             }
           },
           {
@@ -5205,7 +5437,8 @@
               "title": "Y",
               "detail": "Guarded upstream. Not reporting.",
               "end_line": null,
-              "fid": "aec2fb3d49"
+              "fid": "aec2fb3d49",
+              "probe": ""
             }
           }
         ]
@@ -5222,7 +5455,8 @@
               "title": "X",
               "detail": "Actually correct. No bug.",
               "end_line": null,
-              "fid": "87fd04274d"
+              "fid": "87fd04274d",
+              "probe": ""
             }
           },
           {
@@ -5233,7 +5467,8 @@
               "title": "Y",
               "detail": "Guarded upstream. Not reporting.",
               "end_line": null,
-              "fid": "aec2fb3d49"
+              "fid": "aec2fb3d49",
+              "probe": ""
             }
           }
         ]
@@ -5256,7 +5491,8 @@
             "title": "Off by one",
             "detail": "range excludes last element",
             "end_line": null,
-            "fid": "8f3ade1892"
+            "fid": "8f3ade1892",
+            "probe": ""
           }
         },
         {
@@ -5267,7 +5503,8 @@
             "title": "Leak",
             "detail": "handle never closed on the error path",
             "end_line": null,
-            "fid": "2559371620"
+            "fid": "2559371620",
+            "probe": ""
           }
         }
       ]
@@ -5286,7 +5523,8 @@
               "title": "Off by one",
               "detail": "range excludes last element",
               "end_line": null,
-              "fid": "8f3ade1892"
+              "fid": "8f3ade1892",
+              "probe": ""
             }
           },
           {
@@ -5297,7 +5535,8 @@
               "title": "Leak",
               "detail": "handle never closed on the error path",
               "end_line": null,
-              "fid": "2559371620"
+              "fid": "2559371620",
+              "probe": ""
             }
           }
         ]
@@ -5313,7 +5552,8 @@
               "title": "Off by one",
               "detail": "range excludes last element",
               "end_line": null,
-              "fid": "8f3ade1892"
+              "fid": "8f3ade1892",
+              "probe": ""
             }
           },
           {
@@ -5324,7 +5564,8 @@
               "title": "Leak",
               "detail": "handle never closed on the error path",
               "end_line": null,
-              "fid": "2559371620"
+              "fid": "2559371620",
+              "probe": ""
             }
           }
         ],
@@ -5348,7 +5589,8 @@
             "title": "T",
             "detail": "The wraparound is not a bug in isolation, but here the index feeds the length check, so the last element is dropped.",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -5367,7 +5609,8 @@
               "title": "T",
               "detail": "The wraparound is not a bug in isolation, but here the index feeds the length check, so the last element is dropped.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -5383,7 +5626,8 @@
               "title": "T",
               "detail": "The wraparound is not a bug in isolation, but here the index feeds the length check, so the last element is dropped.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ],
@@ -5407,7 +5651,8 @@
             "title": "T",
             "detail": "Checked the truncation cap; the behavior is intended.",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -5426,7 +5671,8 @@
               "title": "T",
               "detail": "Checked the truncation cap; the behavior is intended.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -5443,7 +5689,8 @@
               "title": "T",
               "detail": "Checked the truncation cap; the behavior is intended.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -5468,7 +5715,8 @@
           "title": "Re-introduced",
           "detail": "",
           "end_line": null,
-          "fid": "c9540b337d"
+          "fid": "c9540b337d",
+          "probe": ""
         }
       }
     },
@@ -5486,7 +5734,8 @@
               "title": "Re-introduced",
               "detail": "",
               "end_line": null,
-              "fid": "c9540b337d"
+              "fid": "c9540b337d",
+              "probe": ""
             }
           }
         ]
@@ -5511,7 +5760,8 @@
               "title": "Re-introduced",
               "detail": "",
               "end_line": null,
-              "fid": "c9540b337d"
+              "fid": "c9540b337d",
+              "probe": ""
             }
           }
         ]
@@ -5531,7 +5781,8 @@
               "title": "Re-introduced",
               "detail": "",
               "end_line": null,
-              "fid": "c9540b337d"
+              "fid": "c9540b337d",
+              "probe": ""
             }
           }
         ]
@@ -5549,7 +5800,8 @@
               "title": "Re-introduced",
               "detail": "",
               "end_line": null,
-              "fid": "c9540b337d"
+              "fid": "c9540b337d",
+              "probe": ""
             }
           }
         ],
@@ -5573,7 +5825,8 @@
             "title": "T",
             "detail": "The handler crashes on empty input. No bug in tests.",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -5592,7 +5845,8 @@
               "title": "T",
               "detail": "The handler crashes on empty input. No bug in tests.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -5608,7 +5862,8 @@
               "title": "T",
               "detail": "The handler crashes on empty input. No bug in tests.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ],
@@ -5632,7 +5887,8 @@
             "title": "T",
             "detail": "The flag is set; as intended, it crashes.",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -5651,7 +5907,8 @@
               "title": "T",
               "detail": "The flag is set; as intended, it crashes.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -5667,7 +5924,8 @@
               "title": "T",
               "detail": "The flag is set; as intended, it crashes.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ],
@@ -5691,7 +5949,8 @@
             "title": "T",
             "detail": "The mock hides it; tests pass, prod breaks.",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -5710,7 +5969,8 @@
               "title": "T",
               "detail": "The mock hides it; tests pass, prod breaks.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -5726,7 +5986,8 @@
               "title": "T",
               "detail": "The mock hides it; tests pass, prod breaks.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ],
@@ -5750,7 +6011,8 @@
             "title": "T",
             "detail": "Cannot confirm without seeing fetch.py; not reporting as a definite bug.",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -5769,7 +6031,8 @@
               "title": "T",
               "detail": "Cannot confirm without seeing fetch.py; not reporting as a definite bug.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -5786,7 +6049,8 @@
               "title": "T",
               "detail": "Cannot confirm without seeing fetch.py; not reporting as a definite bug.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -5809,7 +6073,8 @@
             "title": "T",
             "detail": "Re-examining: no bug here.",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -5828,7 +6093,8 @@
               "title": "T",
               "detail": "Re-examining: no bug here.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -5845,7 +6111,8 @@
               "title": "T",
               "detail": "Re-examining: no bug here.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -5868,7 +6135,8 @@
             "title": "T",
             "detail": "Checked all paths; no bug there.",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -5887,7 +6155,8 @@
               "title": "T",
               "detail": "Checked all paths; no bug there.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -5904,7 +6173,8 @@
               "title": "T",
               "detail": "Checked all paths; no bug there.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -5927,7 +6197,8 @@
             "title": "T",
             "detail": "The mock client stubs the handler, so tests pass as a side effect while prod crashes.",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -5946,7 +6217,8 @@
               "title": "T",
               "detail": "The mock client stubs the handler, so tests pass as a side effect while prod crashes.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -5962,7 +6234,8 @@
               "title": "T",
               "detail": "The mock client stubs the handler, so tests pass as a side effect while prod crashes.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ],
@@ -5986,7 +6259,8 @@
             "title": "T",
             "detail": "Tests pass as a result of the mocked client.",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -6005,7 +6279,8 @@
               "title": "T",
               "detail": "Tests pass as a result of the mocked client.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -6021,7 +6296,8 @@
               "title": "T",
               "detail": "Tests pass as a result of the mocked client.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ],
@@ -6045,7 +6321,8 @@
             "title": "T",
             "detail": "The retry is by design as a fallback but it double-charges the user.",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -6064,7 +6341,8 @@
               "title": "T",
               "detail": "The retry is by design as a fallback but it double-charges the user.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -6080,7 +6358,8 @@
               "title": "T",
               "detail": "The retry is by design as a fallback but it double-charges the user.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ],
@@ -6104,7 +6383,8 @@
             "title": "T",
             "detail": "Cannot confirm without seeing fetch.py; not reporting as a definite bug.",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -6123,7 +6403,8 @@
               "title": "T",
               "detail": "Cannot confirm without seeing fetch.py; not reporting as a definite bug.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -6140,7 +6421,8 @@
               "title": "T",
               "detail": "Cannot confirm without seeing fetch.py; not reporting as a definite bug.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -6163,7 +6445,8 @@
             "title": "T",
             "detail": "Speculative only; not reporting as a real issue.",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -6182,7 +6465,8 @@
               "title": "T",
               "detail": "Speculative only; not reporting as a real issue.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -6199,7 +6483,8 @@
               "title": "T",
               "detail": "Speculative only; not reporting as a real issue.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -6222,7 +6507,8 @@
             "title": "T",
             "detail": "Cannot confirm without a repro; not reporting as a potential bug.",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -6241,7 +6527,8 @@
               "title": "T",
               "detail": "Cannot confirm without a repro; not reporting as a potential bug.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -6258,7 +6545,8 @@
               "title": "T",
               "detail": "Cannot confirm without a repro; not reporting as a potential bug.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -6281,7 +6569,8 @@
             "title": "T",
             "detail": "Speculative shape only; not reporting as a possible issue.",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -6300,7 +6589,8 @@
               "title": "T",
               "detail": "Speculative shape only; not reporting as a possible issue.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -6317,7 +6607,8 @@
               "title": "T",
               "detail": "Speculative shape only; not reporting as a possible issue.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -6340,7 +6631,8 @@
             "title": "T",
             "detail": "handle() returns a str where an int is intended.",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -6359,7 +6651,8 @@
               "title": "T",
               "detail": "handle() returns a str where an int is intended.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -6375,7 +6668,8 @@
               "title": "T",
               "detail": "handle() returns a str where an int is intended.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ],
@@ -6399,7 +6693,8 @@
             "title": "T",
             "detail": "The early return skips the finally block, so the second retry never runs as intended.",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -6418,7 +6713,8 @@
               "title": "T",
               "detail": "The early return skips the finally block, so the second retry never runs as intended.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -6434,7 +6730,8 @@
               "title": "T",
               "detail": "The early return skips the finally block, so the second retry never runs as intended.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ],
@@ -6458,7 +6755,8 @@
             "title": "T",
             "detail": "The mock swallows the exception, so tests pass.",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -6477,7 +6775,8 @@
               "title": "T",
               "detail": "The mock swallows the exception, so tests pass.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -6493,7 +6792,8 @@
               "title": "T",
               "detail": "The mock swallows the exception, so tests pass.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ],
@@ -6517,7 +6817,8 @@
             "title": "T",
             "detail": "Checked the truncation cap; the behavior is intended.",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -6536,7 +6837,8 @@
               "title": "T",
               "detail": "Checked the truncation cap; the behavior is intended.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -6553,7 +6855,8 @@
               "title": "T",
               "detail": "Checked the truncation cap; the behavior is intended.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -6576,7 +6879,8 @@
             "title": "T",
             "detail": "Minor coercion only; this is by design.",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -6595,7 +6899,8 @@
               "title": "T",
               "detail": "Minor coercion only; this is by design.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -6612,7 +6917,8 @@
               "title": "T",
               "detail": "Minor coercion only; this is by design.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -6635,7 +6941,8 @@
             "title": "T",
             "detail": "Re-examined the loop bounds; it works as intended.",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -6654,7 +6961,8 @@
               "title": "T",
               "detail": "Re-examined the loop bounds; it works as intended.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -6671,7 +6979,8 @@
               "title": "T",
               "detail": "Re-examined the loop bounds; it works as intended.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -6694,7 +7003,8 @@
             "title": "T",
             "detail": "Wrote a repro and checked the callers, but tests pass.",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -6713,7 +7023,8 @@
               "title": "T",
               "detail": "Wrote a repro and checked the callers, but tests pass.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -6730,7 +7041,8 @@
               "title": "T",
               "detail": "Wrote a repro and checked the callers, but tests pass.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -6753,7 +7065,8 @@
             "title": "T",
             "detail": "Checked the retry path; this is working as intended.",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -6772,7 +7085,8 @@
               "title": "T",
               "detail": "Checked the retry path; this is working as intended.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -6789,7 +7103,8 @@
               "title": "T",
               "detail": "Checked the retry path; this is working as intended.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -6812,7 +7127,8 @@
             "title": "T",
             "detail": "Checked the callers; this is as intended.",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -6831,7 +7147,8 @@
               "title": "T",
               "detail": "Checked the callers; this is as intended.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -6848,7 +7165,8 @@
               "title": "T",
               "detail": "Checked the callers; this is as intended.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -6871,7 +7189,8 @@
             "title": "T",
             "detail": "The early return skips the finally block, so the second retry never runs as intended.",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -6890,7 +7209,8 @@
               "title": "T",
               "detail": "The early return skips the finally block, so the second retry never runs as intended.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ]
@@ -6906,7 +7226,8 @@
               "title": "T",
               "detail": "The early return skips the finally block, so the second retry never runs as intended.",
               "end_line": null,
-              "fid": "fb53e70b17"
+              "fid": "fb53e70b17",
+              "probe": ""
             }
           }
         ],
@@ -7035,7 +7356,8 @@
             "title": "T",
             "detail": "D",
             "end_line": 100000000000000000000000000000000000000000000,
-            "fid": "d4c9073fe2"
+            "fid": "d4c9073fe2",
+            "probe": ""
           }
         }
       ]
@@ -7057,7 +7379,8 @@
             "title": "T",
             "detail": "D",
             "end_line": null,
-            "fid": "d4c9073fe2"
+            "fid": "d4c9073fe2",
+            "probe": ""
           }
         }
       ]
@@ -7225,7 +7548,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -7285,7 +7609,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -7441,7 +7766,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "800e1471a4"
+            "fid": "800e1471a4",
+            "probe": ""
           }
         }
       ]
@@ -7465,7 +7791,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "800e1471a4"
+            "fid": "800e1471a4",
+            "probe": ""
           }
         }
       ]
@@ -7537,7 +7864,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -7561,7 +7889,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -7585,7 +7914,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -7609,7 +7939,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -7633,7 +7964,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -7657,7 +7989,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -7681,7 +8014,8 @@
             "title": "T",
             "detail": "",
             "end_line": 9,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -7705,7 +8039,8 @@
             "title": "T",
             "detail": "",
             "end_line": 9,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -7729,7 +8064,8 @@
             "title": "T",
             "detail": "",
             "end_line": 100000000000000000000000000000000000000000000,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -7753,7 +8089,8 @@
             "title": "T",
             "detail": "",
             "end_line": 100000000000000000000000000000000000000000000,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -7777,7 +8114,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -7801,7 +8139,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -7825,7 +8164,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -7849,7 +8189,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -7873,7 +8214,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -7897,7 +8239,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -7921,7 +8264,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -7945,7 +8289,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -7969,7 +8314,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -7993,7 +8339,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -8017,7 +8364,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -8041,7 +8389,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -8065,7 +8414,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -8089,7 +8439,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -8113,7 +8464,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -8137,7 +8489,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -8161,7 +8514,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -8185,7 +8539,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "fb53e70b17"
+            "fid": "fb53e70b17",
+            "probe": ""
           }
         }
       ]
@@ -8209,7 +8564,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "550f54bc31"
+            "fid": "550f54bc31",
+            "probe": ""
           }
         }
       ]
@@ -8233,7 +8589,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "550f54bc31"
+            "fid": "550f54bc31",
+            "probe": ""
           }
         }
       ]
@@ -8257,7 +8614,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "6e4c7fd8be"
+            "fid": "6e4c7fd8be",
+            "probe": ""
           }
         }
       ]
@@ -8281,7 +8639,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "6e4c7fd8be"
+            "fid": "6e4c7fd8be",
+            "probe": ""
           }
         }
       ]
@@ -8305,7 +8664,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "617c39b347"
+            "fid": "617c39b347",
+            "probe": ""
           }
         }
       ]
@@ -8329,7 +8689,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "617c39b347"
+            "fid": "617c39b347",
+            "probe": ""
           }
         }
       ]
@@ -8353,7 +8714,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "7927db9b45"
+            "fid": "7927db9b45",
+            "probe": ""
           }
         }
       ]
@@ -8377,7 +8739,8 @@
             "title": "T",
             "detail": "",
             "end_line": null,
-            "fid": "7927db9b45"
+            "fid": "7927db9b45",
+            "probe": ""
           }
         }
       ]
@@ -8446,7 +8809,8 @@
               "title": "unknown",
               "detail": "",
               "end_line": null,
-              "fid": "a9c8554ea0"
+              "fid": "a9c8554ea0",
+              "probe": ""
             }
           },
           {
@@ -8457,7 +8821,8 @@
               "title": "high",
               "detail": "",
               "end_line": null,
-              "fid": "eb789330b2"
+              "fid": "eb789330b2",
+              "probe": ""
             }
           }
         ],
@@ -8474,7 +8839,8 @@
               "title": "high",
               "detail": "",
               "end_line": null,
-              "fid": "eb789330b2"
+              "fid": "eb789330b2",
+              "probe": ""
             }
           }
         ],

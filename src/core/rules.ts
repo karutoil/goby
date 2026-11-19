@@ -3,6 +3,7 @@ import {all, bool, fun, oneOf, proveDecision, proveSteps, rule, when} from 'gdp-
 export const gateFields = [
   'receipt_valid', 'same_head', 'complete', 'agent', 'no_unthreaded',
   'threads_complete', 'findings_accounted', 'no_open_threads', 'execution_succeeded', 'diff_matches',
+  'verify_policy', 'verification_valid', 'verified_only',
 ] as const;
 export type GateFacts = Record<(typeof gateFields)[number], boolean>;
 const gateInputs = Object.fromEntries(gateFields.map(key => [key, bool]));
