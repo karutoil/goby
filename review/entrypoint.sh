@@ -89,6 +89,8 @@ case "$PROVIDER" in
   openai)    KEY="${OPENAI_API_KEY:-}";      UPSTREAM="https://api.openai.com" ;;
   # Any OpenAI-compatible endpoint: the key is whatever the workflow named, the URL is explicit.
   # A provider with a fixed upstream cannot be pointed at a gateway, which is the whole point.
+  # The host only, no path: the agent's models file names `/v1`, and the proxy prepends the
+  # upstream's own pathname to the request path.
   custom)    KEY="${GOBY_API_KEY:-${OPENAI_API_KEY:-}}"; UPSTREAM="${GOBY_UPSTREAM:-}" ;;
   *) goby_log "error: unknown provider $PROVIDER"; exit 2 ;;
 esac
