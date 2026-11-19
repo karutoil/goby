@@ -1,0 +1,10 @@
+{
+  "$schema": "https://pi.dev/schemas/models.schema.json",
+  "providers": {
+    "custom": {
+      "baseUrl": "$GOBY_UPSTREAM",
+      "api": "openai-completions",
+      "apiKey": "$OPENAI_API_KEY"
+    }
+  }
+}
