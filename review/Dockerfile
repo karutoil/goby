@@ -28,6 +28,7 @@ COPY --from=harness /build/progress.js /opt/goby/progress.js
 COPY review/entrypoint.sh /opt/goby/entrypoint.sh
 COPY review/defaults.env /opt/goby/defaults.env
 COPY review/prompt.md /opt/goby/prompt.md
+COPY review/render_prompt.py /opt/goby/render_prompt.py
 COPY review/report_findings.ts /opt/goby/report_findings.ts
 # The verification pass. It runs as its own uid, with no token and no model key: it executes the
 # reviewed repository's own commands, so it belongs on the same side of the boundary as the agent.

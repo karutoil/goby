@@ -29,6 +29,8 @@ jobs:
       # The verification pass is stdlib Python and runs child processes for real: no image, no
       # mocks, so it is cheap to run here and expensive to discover broken in a review.
       - run: python3 verify/test_verify.py
+      # What the reviewer is told: inline or manifest, and never a placeholder nobody filled.
+      - run: python3 review/test_render_prompt.py
       # A workflow file with a bad key is not a lint failure: GitHub refuses to run it at all, so a
       # mistake here silently turns a pipeline off. Cheap, and it reads every workflow in the repo.
       - name: Lint the workflows

@@ -102,7 +102,8 @@ for that repository.
 | `GOBY_MAX_TOOL_CALLS` | tool calls, the backstop when a single turn does a lot of work |
 | `GOBY_AGENT_TIMEOUT_S` | wall clock for the agent, enforced by `timeout` as pi's parent; a turn budget is not a clock, and without this a slow provider window reaches the job timeout with the review unfinished and its statuses pending. The same extension nudges on this clock too — a notice with 20% left and the wrap-up turn with 10% — because the clock is what actually ends a run: 600s is roughly 28k output tokens of thinking at the measured rate, so a hard diff can reach it with turns to spare. A model error that ends the run earns one more attempt from what is left of it, and none if under a fifth remains |
 | `GOBY_BASH_TIMEOUT_S` | wall clock for one shell command; a command with none can run until the job timeout |
-| `GOBY_MAX_DIFF_LINES` | larger diffs are skipped: the review says so and the gate fails closed |
+| `GOBY_MAX_DIFF_LINES` | larger diffs are skipped: the review says so and the gate fails closed. Default 50,000 |
+| `GOBY_INLINE_DIFF_LINES` | past this many lines the prompt names `out/diff.patch` and a manifest instead of inlining the diff. Default 4,000 |
 | `GOBY_MAX_FINDINGS` | findings posted, highest severity first; the rest are counted in the summary |
 | `GOBY_VERIFY` | `off`, `advisory` (default) or `required`: whether the harness re-runs each finding's `probe` against the head and the merge base. `required` publishes only reproduced findings, and a high-severity claim nobody could reproduce fails the gate |
 | `GOBY_MAX_PROBES` | findings probed per review; the rest are withheld with a reason |

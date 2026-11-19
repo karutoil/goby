@@ -51,9 +51,7 @@ exits 1 when the bug is present is. If you cannot write one, you have a suspicio
 
 ## The diff
 
-```diff
 {{DIFF}}
-```
 
 ## Report
 
