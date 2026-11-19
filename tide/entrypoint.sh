@@ -113,6 +113,10 @@ ensure_proxy() {
                header="x-api-key"; scheme="" ;;
     openai)    key="${OPENAI_API_KEY:-}";      upstream="https://api.openai.com" ;;
     deepinfra) key="${DEEPINFRA_API_KEY:-}";   upstream="https://api.deepinfra.com" ;;
+    # Any OpenAI-compatible gateway. The host only: the path the agent's models file names
+    # (`/v1`) is forwarded, so `GOBY_UPSTREAM` must not repeat it.
+    custom)    key="${OPENAI_API_KEY:-}";      upstream="${GOBY_UPSTREAM:-}"
+               [[ -n "$upstream" ]] || { log "error: provider custom needs GOBY_UPSTREAM"; return 2; } ;;
     *) log "error: no upstream known for provider $provider"; return 2 ;;
   esac
   [[ -n "$key" ]] || { log "error: no key for provider $provider"; return 2; }

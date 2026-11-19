@@ -42,7 +42,12 @@
    reads the review, so nothing else could say whether the reviewer was warned before its cap.
    `report_findings.ts` writes a `budget` record for each nudge and a `blocked` record for each
    cut-off; `/opt/common/timing.py` is what reads them.
-8. The reuse decision is made before the clone, and a reuse run needs no working tree. `prepare`
+8. A published finding is one the harness reproduced. `verify/verify.py` re-runs the reviewer's
+   own `probe` on the head and on the merge base: only head-fails/base-passes is a regression, and
+   only that is published under `GOBY_VERIFY=required`. A withheld high-severity claim fails the
+   gate instead of passing it. A verdict that is missing, or for another head or diff, is not
+   "nothing was withheld" — it is an incomplete review.
+9. The reuse decision is made before the clone, and a reuse run needs no working tree. `prepare`
    answers it from the GitHub API alone — the API's diff digest, the receipt on a previous review,
    the reviews already posted — so a head that was already reviewed costs a status refresh, not a
    clone and a diff nothing reads. Anything that makes `prepare` depend on `diff.patch` puts back a

@@ -9,7 +9,7 @@ describe('executable gdp-wired policy foundation', () => {
       expect(gateAllowed(facts as Parameters<typeof gateAllowed>[0])).toBe(mask === (1 << gateFields.length) - 1);
     }
   });
-  test('kernel checks policy laws', () => expect(provePolicies()).toEqual({gateLaws: 11, lifecycleLaws: 3, checked: true}));
+  test('kernel checks policy laws', () => expect(provePolicies()).toEqual({gateLaws: gateFields.length + 1, lifecycleLaws: 3, checked: true}));
   test('unsafe completion-only mutant is refused', () => {
     const broken = fun('unsafe').inputs({execution: bool, clean: bool}).returns(x => ({allowed: when(x.execution, 1, 0)}));
     expect(proveDecision(broken.law('Findings block', () => [], (out, x) => out.allowed.eq(1).implies(x.clean))).proven).toBe(false);

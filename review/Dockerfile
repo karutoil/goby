@@ -29,7 +29,11 @@ COPY review/entrypoint.sh /opt/goby/entrypoint.sh
 COPY review/defaults.env /opt/goby/defaults.env
 COPY review/prompt.md /opt/goby/prompt.md
 COPY review/report_findings.ts /opt/goby/report_findings.ts
-RUN chmod 0755 /opt/goby/entrypoint.sh
+# The verification pass. It runs as its own uid, with no token and no model key: it executes the
+# reviewed repository's own commands, so it belongs on the same side of the boundary as the agent.
+COPY verify/verify.py /opt/goby/verify.py
+RUN chmod 0755 /opt/goby/entrypoint.sh \
+ && useradd --uid 10002 --create-home verifier
 
 # The run's own record, from `common/` beside the product that reads it: `summarize_run.py` is the
 # one log line every goby product prints, and `timing.py` turns the same stream into the model/tool
