@@ -28,6 +28,18 @@ export function review_budget(maxRounds: number, prior: readonly PriorReview[], 
   };
 }
 
+/**
+ * Whether this run is a status refresh rather than a review.
+ *
+ * `force` exists because the reuse test compares the head, the base ref and the diff — none of
+ * which change when the *reviewer* changes. After a reviewer upgrade the old receipt is still
+ * "for this commit", and without a way to ask for a fresh pass the only route to one is an empty
+ * commit. A forced run pays for itself and says so in its log line.
+ */
+export function reuse_decision(force: boolean, same_head: boolean, stopped: boolean): boolean {
+  return !force && (same_head || stopped);
+}
+
 /** What a reused round leaves the gate, when anything is left at all. */
 export type ReusedEvidence = 'same-head' | 'rounds' | null;
 
