@@ -444,9 +444,12 @@ if [[ "$VERIFY_MODE" != "off" ]]; then
     rm -rf "$VERIFY_DIR"; mkdir -p "$VERIFY_DIR"
     if git -C "$REPO_DIR" worktree add --detach --quiet "$VERIFY_DIR/head" "$GOBY_HEAD" \
        && git -C "$REPO_DIR" worktree add --detach --quiet "$VERIFY_DIR/base" "$MERGE_BASE"; then
+      # The agent's output directory is 0700 and owned by the agent, on purpose: the verifier
+      # gets a copy of the one file it is entitled to read, not access to the directory.
+      cp "$AGENT_OUT/findings.jsonl" "$VERIFY_DIR/findings.jsonl"
       chown -R "$GOBY_VERIFY_UID:$GOBY_VERIFY_UID" "$VERIFY_DIR"
       if ! goby_run_as_verifier python3 /opt/goby/verify.py \
-           --findings "$AGENT_OUT/findings.jsonl" \
+           --findings "$VERIFY_DIR/findings.jsonl" \
            --head-dir "$VERIFY_DIR/head" --base-dir "$VERIFY_DIR/base" --out "$VERIFY_DIR" \
            --head "$GOBY_HEAD" --diff-sha256 "$DIFF_DIGEST" \
            --mode "$VERIFY_MODE" --max-probes "$GOBY_MAX_PROBES" \
