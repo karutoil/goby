@@ -248,24 +248,16 @@ PYCATALOG
 chown -R "$GOBY_AGENT_USER:$GOBY_AGENT_USER" "$AGENT_HOME"
 chmod 700 "$AGENT_HOME"
 
-GOBY_REPO="$GOBY_REPO" GOBY_HEAD="$GOBY_HEAD" GOBY_BASE="$GOBY_BASE" \
-GOBY_SANDBOX="$SANDBOX" GOBY_REFERENCE="$REPO_DIR" GOBY_PROMPT=/opt/goby/prompt.md GOBY_DIFF="$DIFF" \
-GOBY_PROMPT_OUT="$OUT/prompt.md" python3 - <<'PYTEMPLATE'
-import os, pathlib
-template = pathlib.Path(os.environ["GOBY_PROMPT"]).read_text()
-diff = pathlib.Path(os.environ["GOBY_DIFF"]).read_text()
-for key, value in {
-    "{{REPO}}": os.environ["GOBY_REPO"],
-    "{{HEAD}}": os.environ["GOBY_HEAD"],
-    "{{BASE}}": os.environ["GOBY_BASE"],
-    "{{SANDBOX}}": os.environ["GOBY_SANDBOX"],
-    "{{REFERENCE}}": os.environ["GOBY_REFERENCE"],
-    "{{OUT}}": os.environ["GOBY_OUT"],
-    "{{DIFF}}": diff,
-}.items():
-    template = template.replace(key, value)
-pathlib.Path(os.environ["GOBY_PROMPT_OUT"]).write_text(template)
-PYTEMPLATE
+# The brief. `render_prompt.py` inlines the diff while it fits and names the file when it does
+# not: an 18k-line diff is ~195k tokens of prompt, re-sent every turn, and inlining it is how a
+# large pull request becomes a review of its first 4,000 lines.
+git -C "$REPO_DIR" diff --numstat "$MERGE_BASE" "$GOBY_HEAD" > "$OUT/diff.numstat" || true
+python3 /opt/goby/render_prompt.py \
+  --template /opt/goby/prompt.md --out "$OUT/prompt.md" \
+  --diff "$DIFF" --numstat "$OUT/diff.numstat" \
+  --inline-lines "$GOBY_INLINE_DIFF_LINES" \
+  --repo "$GOBY_REPO" --head "$GOBY_HEAD" --base "$GOBY_BASE" \
+  --sandbox "$SANDBOX" --reference "$REPO_DIR" --out-dir "$OUT"
 chmod 644 "$OUT/prompt.md"
 
 AGENT_OUT="$OUT/agent"
