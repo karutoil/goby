@@ -15,7 +15,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { resolve_gate_target, type GateTarget } from './core/gateEvent.ts';
 import { caveats_for } from './core/caveat.ts';
-import { review_budget, reuse_evidence, type ReusedEvidence } from './core/rounds.ts';
+import { review_budget, reuse_decision, reuse_evidence, type ReusedEvidence } from './core/rounds.ts';
 import { gate_enabled } from './core/flags.ts';
 import { resolve_digest } from './core/image.ts';
 import { check_target } from './core/target.ts';
@@ -159,8 +159,11 @@ async function prepare(out: string, client: GitHubClient): Promise<number> {
   const prior = (await client.own_reviews(pr).catch(() => []))
     .map(review => ({ head: review.head, complete: parseReceipt(review.body, review.head)?.complete === true }));
   const budget = review_budget(maxRounds, prior, head);
-  const reuse = sameHead || budget.stop;
-  const reuseReason = sameHead ? 'this commit was already reviewed' : budget.reason;
+  const force = optionalEnv('GOBY_FORCE') === '1';
+  const reuse = reuse_decision(force, sameHead, budget.stop);
+  const reuseReason = force
+    ? null
+    : sameHead ? 'this commit was already reviewed' : budget.reason;
   if (!reuse) {
     if (gate_enabled()) await post_gate_status(client, head, 'pending', 'Review in progress');
     await post_status(client, head, 'pending', 'Review in progress');
@@ -194,7 +197,7 @@ async function prepare(out: string, client: GitHubClient): Promise<number> {
     reuse_kind: reuse_evidence(previous?.complete === true, budget.stop), incomplete,
   };
   await writeFile(join(out, 'job.json'), JSON.stringify(job, null, 2) + '\n');
-  console.log(JSON.stringify({ phase: 'prepared', reuse, open_threads: opened.length, resolved_history: history.length, diff_lines: job.diff_lines, diff_digest: digest }));
+  console.log(JSON.stringify({ phase: 'prepared', reuse, force, open_threads: opened.length, resolved_history: history.length, diff_lines: job.diff_lines, diff_digest: digest }));
   return 0;
 }
 

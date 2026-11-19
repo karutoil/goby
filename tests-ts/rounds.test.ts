@@ -1,5 +1,5 @@
 import {test, expect} from 'bun:test';
-import {review_budget, reuse_evidence} from '../src/core/rounds.ts';
+import {review_budget, reuse_decision, reuse_evidence} from '../src/core/rounds.ts';
 
 const completed = (head: string) => ({head, complete: true});
 const incomplete = (head: string) => ({head, complete: false});
@@ -41,4 +41,14 @@ test('a head with no receipt leaves the gate alone', () => {
   // No evidence exists, so a gate refresh can only fail closed and stay failed.
   expect(reuse_evidence(false, true)).toBe('rounds');
   expect(reuse_evidence(false, false)).toBeNull();
+});
+
+test('a forced run is never a status refresh', () => {
+  // The reuse test compares head, base ref and diff — none of which change when the reviewer
+  // does. Without this, a reviewer upgrade can only be exercised by an empty commit.
+  expect(reuse_decision(true, true, true)).toBe(false);
+  expect(reuse_decision(true, false, true)).toBe(false);
+  expect(reuse_decision(false, true, false)).toBe(true);
+  expect(reuse_decision(false, false, true)).toBe(true);
+  expect(reuse_decision(false, false, false)).toBe(false);
 });
