@@ -250,6 +250,7 @@ async function finish(out: string, client: GitHubClient, warn: (m: string) => vo
   // Verification decides what a claim is worth; `select` still decides where it goes.
   let verification: Verification | null = null;
   let verificationNote: string | null = null;
+  let verificationDegraded: string | null = null;
   if (mode !== 'off') {
     const raw = await readFile(join(out, 'verify', 'verdict.json'), 'utf8').catch(() => null);
     verification = parseVerification(raw, job.head, job.diff_digest);
@@ -259,7 +260,8 @@ async function finish(out: string, client: GitHubClient, warn: (m: string) => vo
       // reported: "nothing was withheld" would be a guess, and it is the guess that publishes.
       if (mode === 'required') incomplete.push(verificationNote);
     } else if (verification.degraded.length) {
-      verificationNote = verification.degraded.join('; ');
+      // The verifier answered; these are the caveats on its answer, not a missing answer.
+      verificationDegraded = verification.degraded.join('; ');
     }
     stampVerification(parsed, verification);
   }
@@ -291,7 +293,7 @@ async function finish(out: string, client: GitHubClient, warn: (m: string) => vo
       droppedPaths: picked.dropped.paths, droppedCap: picked.dropped.cap, droppedDupe: picked.dropped.dupe,
       droppedResolved: picked.dropped.resolved, droppedRetracted: picked.dropped.retracted,
       verified: verifiedInline.length, unverifiedPosted: unverifiedPosted.length,
-      withheld: withheld.length, withheldHigh, verificationNote,
+      withheld: withheld.length, withheldHigh, verificationNote, verificationDegraded,
       incomplete: complete ? null : incomplete.join(' '),
       caveat: caveats.length ? caveats.join(' ') : null,
     }, REVIEW_VERSION) + '\n\n' + receiptMarker(receipt);

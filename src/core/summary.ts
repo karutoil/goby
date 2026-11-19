@@ -33,8 +33,10 @@ export interface ReviewStats {
   /** Kept out of the review because they could not be reproduced. */
   withheld: number;
   withheldHigh: number;
-  /** Why verification produced nothing, when it ran and did not answer. */
+  /** Why verification produced nothing at all. */
   verificationNote?: string | null;
+  /** What verification did say, when it answered with caveats. Never "did not answer". */
+  verificationDegraded?: string | null;
 }
 
 export function build_summary(
@@ -68,6 +70,7 @@ export function build_summary(
   if (stats.verified) lines.push('', `${stats.verified} posted finding(s) were reproduced by re-running the reviewer's own probe against the merge base and the head.`);
   if (stats.unverifiedPosted) lines.push('', `${stats.unverifiedPosted} posted finding(s) were **not reproduced** by the harness; treat them as leads, not defects.`);
   if (stats.withheld) lines.push('', `**${stats.withheld} finding(s) were withheld** because the change could not be shown to introduce them${stats.withheldHigh ? `, ${stats.withheldHigh} of them high severity` : ''}.`);
+  if (stats.verificationDegraded) lines.push('', `**Verification notes:** ${stats.verificationDegraded}`);
   if (stats.verificationNote) lines.push('', `**Verification did not answer:** ${stats.verificationNote}`);
   if (stats.incomplete) lines.push('', `**This review is incomplete:** ${stats.incomplete}`);
   if (stats.caveat) lines.push('', `Partial scan: ${stats.caveat}`);
