@@ -13,6 +13,11 @@ export function comment_body(finding: Finding, head: string): string {
     lines.push('**Reproduced by re-running, on the merge base and on this head:**', '', '```sh', finding.probe, '```', '');
   } else if (finding.verification === 'unverified') {
     lines.push('> Not reproduced: the harness did not observe this claim in this run.', '');
+    // The command matters most when it did not work: a reader can run it themselves and see
+    // whether the harness or the claim is what failed.
+    if (finding.probe) {
+      lines.push('<details><summary>The command it was checked with</summary>', '', '```sh', finding.probe, '```', '', '</details>', '');
+    }
   }
   let marker = `<!-- ${MARKER} id=${finding.fid} severity=${finding.severity} kind=bug sha=${head.slice(0, 10)}`;
   if (finding.end_line != null && finding.end_line > finding.line) {

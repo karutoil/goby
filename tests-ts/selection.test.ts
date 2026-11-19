@@ -144,3 +144,24 @@ test('an unresolved digest says so rather than pretending the tag identifies the
   }, '9.9.9');
   expect(text).toContain('(digest unresolved)');
 });
+
+test('a verification caveat is a note, not a missing answer', () => {
+  const text = build_summary([], [], {dupes: [], resolved: []}, {
+    model: 'm', image: null, imageDigest: null, head: 'a'.repeat(40), base: 'b'.repeat(40), diffLines: 9, elapsedS: 1,
+    toolCalls: 2, droppedPaths: 0, droppedCap: 0, droppedDupe: 0, droppedResolved: 0, droppedRetracted: 0,
+    verified: 0, unverifiedPosted: 1, withheld: 0, withheldHigh: 0, incomplete: null,
+    verificationDegraded: 'pre_existing_finding: a finding reproduces on the merge base',
+  }, '9.9.9');
+  expect(text).toContain('**Verification notes:** pre_existing_finding');
+  expect(text).not.toContain('Verification did not answer');
+});
+
+test('no verdict at all is the sentence that says so', () => {
+  const text = build_summary([], [], {dupes: [], resolved: []}, {
+    model: 'm', image: null, imageDigest: null, head: 'a'.repeat(40), base: 'b'.repeat(40), diffLines: 9, elapsedS: 1,
+    toolCalls: 2, droppedPaths: 0, droppedCap: 0, droppedDupe: 0, droppedResolved: 0, droppedRetracted: 0,
+    verified: 0, unverifiedPosted: 0, withheld: 0, withheldHigh: 0, incomplete: null,
+    verificationNote: 'the verification pass produced no usable verdict',
+  }, '9.9.9');
+  expect(text).toContain('**Verification did not answer:**');
+});

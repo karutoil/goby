@@ -151,3 +151,19 @@ describe('the comment separates what the model said from what the harness ran', 
     expect(comment_body(finding(), '0123456789abcdef')).not.toContain('Not reproduced');
   });
 });
+
+describe('an unreproduced finding shows the command that was tried', () => {
+  test('the probe is in a details block so the reader can run it', () => {
+    const unreproduced = finding({ probe: 'npx vitest run src/components/__probe.test.tsx' });
+    unreproduced.verification = 'unverified';
+    const body = comment_body(unreproduced, '0123456789abcdef');
+    expect(body).toContain('<details><summary>The command it was checked with</summary>');
+    expect(body).toContain('```sh\nnpx vitest run src/components/__probe.test.tsx\n```');
+  });
+
+  test('no probe, no empty block', () => {
+    const unreproduced = finding();
+    unreproduced.verification = 'unverified';
+    expect(comment_body(unreproduced, '0123456789abcdef')).not.toContain('<details>');
+  });
+});

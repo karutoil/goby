@@ -48,7 +48,8 @@ SETUP_ERROR = re.compile(
     r"(ModuleNotFoundError|ImportError|command not found|No such file or directory|"
     r"Cannot find module|is not recognized as an internal or external command|"
     r"error: could not compile|cargo: not found|go: command not found|"
-    r"fixture '[^']*' not found|no tests ran|ERROR: file or directory not found)",
+    r"fixture '[^']*' not found|no tests ran|ERROR: file or directory not found|"
+    r"npm ERR!|ERR_MODULE_NOT_FOUND|Cannot find package|ENOENT|not found)",
     re.IGNORECASE,
 )
 
@@ -275,7 +276,8 @@ def explain(kind: str, record: Record, head: Outcome, base: Outcome) -> str:
     if kind == "regression":
         return f"the probe fails on {where} at head ({head.exit_code}) and passes at the merge base"
     if kind == "pre_existing":
-        return f"the probe fails at head and at the merge base; this change did not introduce it"
+        return ("the probe fails at head and at the merge base: either the defect predates this change, "
+                "or the probe cannot run in the verifier's tree (a missing dependency looks the same)")
     if kind == "fix_confirmed":
         return "the probe fails at the merge base and passes at head; this change fixes the defect"
     if kind == "not_reproduced":
